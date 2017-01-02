@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Analysis With R</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Data Analysis with R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.tinypanther.pizza" property="cc:attributionName" rel="cc:attributionURL">Julia Marden</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+</p>
+
+--
+
+class:center, middle
+# Data Analysis With R
+
+- - -
+
+## Instructors: Julia Marden and Richard Dunks
+### Follow along at: http://bit.ly/data-analysis-r
+![img-center-40](images/datapolitan.png)
+
+---
+
+class:center,middle
+# Welcome
+
+---
+
+# Introduce Yourself to Your Neighbor
++ Name
++ Agency and Office
++ Previous Programming Experience
+
+---
+
+# What to Expect Today
++ 9:15 – Welcome and Introductions
++ 9:25 – What is R?
++ 10:40 – 10 min break
++ 10:50 - Exercise
++ 12:30 – Dismissal
+
+---
+
+# Housekeeping
+--
+
++ We’ll have one 10 minute break
+--
+
++ Class will start promptly after break
+--
+
++ Feel free to use the bathroom if you need during class
+--
+
++ Please take any phone conversations into the hall to not disrupt the class
+
+---
+
+# What is Analysis?
+--
+
+>“Analysis is simply the pursuit of understanding, usually through detailed inspection or comparison”
+
+## - Carter Hewgley, Director of Analytics, Center for Government Excellence
+
+---
+
+# New Orleans Distributes Smoke Alarms
+
+![img-center-40](images/neworleansfire.jpeg)
+.caption[Image Credit: Michael Barnett [CC BY-SA 2.5](http://creativecommons.org/licenses/by-sa/2.5), via Wikimedia Commons]
+
+---
+
+# Targeted Outreach Saves Lives
+
+![img-center-90](images/nolasmokealarm.png)
+.caption[Image Credit: City of New Orleans, via [nola.gov](http://nola.gov/performance-and-accountability/nolalytics/files/full-report-on-analytics-informed-smoke-alarm-outr/)]
+
+
+---
+
+# Targeted Outreach Saves Lives
+
+![img-center-90](images/nolaimpact.png)
+.caption[Image Credit: City of New Orleans, via [nola.gov](http://nola.gov/performance-and-accountability/nolalytics/files/full-report-on-analytics-informed-smoke-alarm-outr/)]
+
+
+---
+
+# What is R?
+--
+
+![img-center-50](images/r_logo.png)
+
++ Statistical programming language
++ Open source
++ Made for and by people who work with data
+
+---
+
+# R vs. Excel
+--
+
++ Language vs. program
+--
+
++ Big data
+--
+
++ Different structures and data types
+--
+
++ More potential
+
+---
+
+# R Studio
+
+![img-center-70](images/rstudio.png)
+
++ Link
++ User:
++ Pass:
+
+<!-- Introduce students to Console, Environment, Plots/Packages -->
+
+---
+
+# R Data
+
++ vectors and matrices
+--
+
++ lists and data frames
+--
+
++ numeric vs. factor
+
+---
+
+# R Syntax
+
+![img-center-80](images/syntax.png)
+.caption[Image Credit: AnonMoos, Public Domain via [Wikipedia](https://commons.wikimedia.org/wiki/File%3ABasic_constituent_structure_analysis_English_sentence.svg)]
+
+---
+
+# R Syntax
+
+```R
+# basic command
+
+command(dataset)
+View(faithful)
+
+```
+```R
+# select a column
+
+command(dataset$column)
+mean(faithful$waiting)
+
+```
+```R
+# get help
+
+?help
+?faithful
+
+```
+
+---
+
+# Old Faithful Exercise
+
+## > [Download Exercise](faithful.R)
+
+![img-center-70](images/old_faithful.jpeg)
+.caption[Image Credit: Astroval1, [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0) via [Wikimedia Commmons](https://commons.wikimedia.org/wiki/File%3ABig_Dipper_Ursa_Major_over_Old_Faithful_geyser_Yellowstone_National_Park_Wyoming_Astrophotography.jpg)]
+
+
+
+---
+
+class:center, middle
+
+#10 MINUTE BREAK
+
+---
+
+# 311 Data Exercise
+
+## > [Download Exercise](311_Exercise.R)
+
++ What kind of data is it?
++ What trends can we find?
++ How can we visualize the data?
+
+---
+
+class:center,middle
+# WRAP-UP
+
+---
+
+# What We've Covered
+--
+
++ R as a language
+--
+
++ RStudio
+--
+
++ Open a dataset
+--
+
++ Explore a dataset
+--
+
++ Visualize a dataset
+--
+
++ What else?
+
+---
+
+# Resources
+--
+
++ [Stat Methods](http://statmethods.net) - Great documentation for doing data analysis in R
+--
+
++ [UCLA Stats](http://www.ats.ucla.edu/stat/) - Many examples of statistical analysis with comparisons between R, Stata, SPSS, etc.
+--
+
++ [Stack Overflow](http://stackoverflow.com/) - One of the best Q&A sites for technical questions of all kinds
+--
+
++ [R Cookbook](http://www.cookbook-r.com/) - Free online walkthrough of the basics
+
+---
+
+# Contact Information
+## Julia Marden
+```
++ Email: julia@tinypanther.com
++ Website: http://tinypanther.com
++ Twitter: @juliaem
+```
+
+## Richard Dunks
+```R
++ Email: richard@datapolitan.com
++ Blog: http://blog.datapolitan.com
++ Twitter: @datapolitan
+```
+
+---
+
+class:center, middle
+#THANK YOU!
+
+---
+
+# Exploring Data
+
+```R
+View()
+# show dataset as spreadsheet in Viewer
+```
+```R
+str()
+# identify data type and structure
+```
+```R
+nrow()
+# identify the number of rows
+```
+```R
+ncol()
+# identify the number of columns
+```
+```R
+colnames()
+# list the name of every column
+```
+
+---
+
+# Manipulate Data
+
+```R
+sort()
+# sort the values in a column
+```
+```R
+data.frame()
+# structure data into a matrix
+```
+```R
+subset()
+# extract data from a dataframe
+```
+
+---
+
+# Calculating Summary statistics
+
+```R
+min()
+# identify minimum value
+```
+```R
+max()
+# identify maximum value
+```
+```R
+median()
+# calculate median value
+```
+```R
+mean()
+# calculate mean value
+```
+
+---
+
+#Visualizing Data
+
+```R
+hist()
+# make a chart with numeric data
+```
+```R
+plot()
+# plot two numeric variables along an x-y axis
+```
+```R
+abline()
+# add a trendline to a plot
+```
+```R
+table()
+# make a table with factor data
+```
+```R
+prop.table()
+# make a table with percentages
+```
+```R
+barplot()
+# make a chart with factor data
+```
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55673554-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
