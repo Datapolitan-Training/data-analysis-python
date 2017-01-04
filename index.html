@@ -374,19 +374,51 @@ df.plot.scatter(x='waiting',y='eruptions')
 ---
 
 # Function Chaining
+--
+
 + We can string operations together using the [dot method](http://reeborg.ca/docs/oop_py_en/oop.html)
+--
+
 + This means we can chain operations using a simple dot betwen operations
-+ Python executes these from left to right (just like we read)
+--
+
++ Python executes these from left to right (like we read)
+--
+
 + Example:
 ```python
-car.door.open() # The object car has an attribute door that we call the open function on
+car.door.open() # Object car has attribute door with function open
 ```
+--
 + This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
-+ You don't need to fully understand this to program in Python
+--
+
++ You don't need to fully understand this to program in Python&nbsp;
+--
+
+but it helps
 
 ---
 
 # Function Chaining
+```python
+df.plot.scatter(x='waiting',y='eruptions')
+```
+--
+
++ `df` is our dataframe object
+--
+
++ We call the `plot` attribute
+--
+
++ We then add the `scatter` function
+--
+
++ We pass the parameters `x='waiting',y='eruptions'` to tell Python how to plot the data
+--
+
++ We'll experiment more with this after the break
 
 ---
 
