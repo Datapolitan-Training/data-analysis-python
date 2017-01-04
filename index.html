@@ -287,11 +287,90 @@ print(c)
 
 ---
 
-# Steps
-+ Import the data 
+# Analyzing the Data
++ Import the data
 ```python
+df = pd.read_csv('http://training.datapolitan.com/data-analysis-python/data/faithful.csv',index_col=0)
+```
+--
++ Inspect the data
+```python
+df.head() # Show the first 5 rows of data
+df.tail() # Show the last 5 rows of data
+```
+--
++ Count the number of rows
+```python
+df.count() # Count the number of non-null values in each column
+```
+---
 
+# Analyzing the Data
++ Find the range of values
+```python
+df.max() # Find the maximum value
+df.min() # Find the minimum value
+```
+--
++ Find the mean (average)
+```python
+df.mean() # Find the mean value of all non-null columns
+```
+--
++ Find the median (middle)
+```python
+df.median() # Find the median value
+```
+--
++ Or do it all together
+```python
+df.describe() # Provide summary statistics for all columns
+```
+---
 
+# Referencing Columns
+--
+
++ To reference a particular column, you use the following syntax:
+--
+
+```python
+df['Column Name']
+```
+--
++ We can then call functions on just that column
+--
+
++ For example, to just get the mean for `eruptions`
+```python
+df['eruptions'].mean()
+```
+
+---
+
+# Visualizing the Data
+--
+
++ To visualize the data, we need to first import the `matplotlib` package
+```python
+import matplotlib.pyplot as plt # Imports the visualization package
+%matplotlib inline 
+# This tells Jupyter to use the package in the webpage
+```
+--
+![img-right-40](images/faithful_chart.png)
++ Then we can create a simple histogram using the `hist()` function
+```python
+df.hist() # Create a histogram
+```
+---
+
+# Visualizing the Data
++ We can create a simple scatter plot that shows the values plotted against each other
+```python
+df.plot.scatter(x='waiting',y='eruptions')
+```
+![img-center-60](images/faithful_scatter.png)
 ---
 
 # Key `pandas` Functions
@@ -322,23 +401,6 @@ Source: http://xkcd.com/353/
 + Ignore the warning you get
 ![img-center-90](images/error.png)
 + Inspect the data based on the techniques we just used
-
----
-
-# Referencing Columns
---
-
-+ To reference a particular column, you use the following syntax:
---
-
-```python
-df['Column Name']
-```
---
-+ For example, to get the count of the rows, we can do a count on the `Unique Key` column
-```python
-df['Unique Key'].count()
-```
 
 ---
 
@@ -416,7 +478,7 @@ and there are [a lot of packages](https://pypi.python.org/pypi/?)
 
 ---
 
-# Contact Information
+## Contact Information
 ## Richard Dunks
 + Email: richard[at]datapolitan[dot]com
 + Blog: http://blog.datapolitan.com
