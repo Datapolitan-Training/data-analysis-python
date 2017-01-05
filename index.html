@@ -174,6 +174,9 @@ class:center,middle
 --
 
 + Look in your packet for the weblink to start your own Notebook
+--
+![img-right-30](images/notebook_start.png)
++ Start a new Python 3 Notebook
 
 ---
 
@@ -199,7 +202,28 @@ class:center,middle
 
 ---
 
+# Using Jupyter Notebook
+--
+
+![img-right-45](images/notebook_run.png)
++ Type code into a block and run the block
+--
+
++ You can also press `Shift` + `Enter` to run a block
+--
+![img-right-40](images/notebook_output.png)
++ The output (if any) will print below
+--
+
++ You can type as much or as little code as you'd like
+--
+
++ You can re-run the block as many times as you'd like
+
+---
+
 # What is Syntax?
+--
 
 ![img-center-80](images/syntax.png)
 .caption[Image Credit: AnonMoos, Public Domain via [Wikipedia](https://commons.wikimedia.org/wiki/File%3ABasic_constituent_structure_analysis_English_sentence.svg)]
@@ -212,20 +236,20 @@ class:center,middle
 + [Variables](https://www.tutorialspoint.com/python/python_variable_types.htm) hold some value
 --
 
-+ We assign value using the `=` sign
++ We create variables and assign a value using the `=` sign
 ```python
-a = 1
-b = 2
+a = 1 # assign the value 1 to the variable a
+b = 2 # assign the value 2 to the variable c
 ```
 --
 + We can perform operations with mathematical operators
 ```python
-c = a + b
+c = a + b # assign the value of a + the value of b to variable c
 ```
 --
 + We can use built-in functions for operations
 ```python
-print(c)
+print(c) # print the value of variable c
 ```
 
 ---
@@ -284,8 +308,8 @@ print(c)
 ---
 
 #Important Packages for Exercises
-+ [`pandas`](http://pandas.pydata.org/)
-+ [`matplotlib`](http://matplotlib.org/)
++ [`pandas`](http://pandas.pydata.org/) provides data analytics functionality similar to a spreadsheet 
++ [`matplotlib`](http://matplotlib.org/) provides data visualization functionality
 
 ---
 
@@ -345,7 +369,7 @@ df.describe() # Provide summary statistics for all columns
 --
 
 ```python
-df['Column Name']
+df['Column Name'] # Example of the syntax for referencing a single column
 ```
 --
 + We can then call functions on just that column
@@ -353,7 +377,7 @@ df['Column Name']
 
 + For example, to just get the mean for `eruptions`
 ```python
-df['eruptions'].mean()
+df['eruptions'].mean() # Calculate the mean of the eruptions column
 ```
 
 ---
@@ -378,7 +402,7 @@ df.hist() # Create a histogram
 # Visualizing the Data
 + We can create a simple scatter plot that shows the values plotted against each other
 ```python
-df.plot.scatter(x='waiting',y='eruptions')
+df.plot.scatter(x='waiting',y='eruptions') # Create a scatter plot 
 ```
 ![img-center-60](images/faithful_scatter.png)
 ---
@@ -412,7 +436,7 @@ but it helps
 
 # Function Chaining
 ```python
-df.plot.scatter(x='waiting',y='eruptions')
+df.plot.scatter(x='waiting',y='eruptions') # Create a scatter plot
 ```
 --
 
