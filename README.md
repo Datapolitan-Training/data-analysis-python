@@ -16,7 +16,7 @@
 # Outline
 + Introduction
   + Class Schedule and Expectations
-  + What Is Python?
+  + What is Python?
   + Overview of Data Analysis
 + Today's Question
   + Understanding Noise Complaints in 311 Data
@@ -30,9 +30,9 @@
   + Identify Columns, Levels, and Known Issues
   + Explore Jupyter Notebook
 + Data Manipulation
-  + Introduction To Python Packages
-  + Learn To Create New Fields and Calculate New Values
-  + Explore Algorithmic Ways To Tackle Problems in Python  
+  + Introduction to Python Packages
+  + Learn to Create New Fields and Calculate New Values
+  + Explore Algorithmic Ways to Tackle Problems in Python  
 + Form Hypotheses
   + What Questions Can We Ask of This Data?
   + How Could We Structure Our Data Analysis?
@@ -40,9 +40,9 @@
   + Understand Difference Between Syntax and Semantic Errors
   + Review Pro-tips for Problem-solving and Debugging
 + Data Visualization
-  + Create A Table That Answers an Above Question
-  + Create A Plot That Answers an Above Question
+  + Create a Table That Answers an Above Question
+  + Create a Plot That Answers an Above Question
 + Wrap Up
-  + How Is Python Different Than Excel?
+  + How is Python Different Than Excel?
   + Examples of Python in Government Work
 + Resources
