@@ -234,7 +234,7 @@ class:center,middle
 
 ---
 
-#Python Facts
+# Python Facts
 --
 
 + Comes from Monty Python and Flying Circus
@@ -312,20 +312,19 @@ class:center,middle
 + [Variables](https://www.tutorialspoint.com/python/python_variable_types.htm) hold some value
 --
 
++ You can think of them like the subject of a sentence
+--
+
 + We create variables and assign a value using the `=` sign
 ```python
-a = 1 # assign the value 1 to the variable a
-b = 2 # assign the value 2 to the variable c
+a = 1 # assign the value 1 to the variable a ("a is 1")
+b = 2 # assign the value 2 to the variable c ("b is 2")
 ```
 --
 + We can perform operations with mathematical operators
 ```python
-c = a + b # assign the value of a + the value of b to variable c
-```
---
-+ We can use built-in functions for operations
-```python
-print(c) # print the value of variable c
+c = a + b # add the value of a and b, and assign to variable c 
+# ("c is a and b")
 ```
 
 ---
@@ -333,16 +332,27 @@ print(c) # print the value of variable c
 # Functions
 --
 
-+ Block of organized, reusable code
++ We can use built-in functions for operations
+```python
+print(c) # print the value of variable c
+```
+--
++ This is a pre-defined and reusable operation
+--
+
++ Functions are like verbs describing an action
 --
 
 + Ideally perform a single action (like `print()`)
+---
+
+# Benefits of Functions
 --
 
 + Make your code more modular
 --
 
-+ Can write you're own functions (once you learn how)
++ Can write you're own functions (we'll do that after lunch)
 --
 
 + For now, we'll use functions created by others
@@ -383,7 +393,7 @@ print(c) # print the value of variable c
 
 ---
 
-#Important Packages for Exercises
+# Important Packages for Exercises
 + [`pandas`](http://pandas.pydata.org/) provides data analytics functionality similar to a spreadsheet 
 + [`matplotlib`](http://matplotlib.org/) provides data visualization functionality
 
@@ -561,6 +571,428 @@ And why might that be a little misleading?
 
 ---
 
+class:center,middle
+# Lunch
+
+---
+
+class:center,middle
+# Welcome Back
+
+---
+
+class:center,middle
+# Algorithms
+
+---
+
+# What is an Algorithm?
+--
+
++ A precise set of instructions required to accomplish a task
+--
+
++ Comprised of three components: Inputs, Operation, Output
+--
+
++ Each step in the operation must be clearly defined and work the same with any input
+
+---
+
+# [Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
+![img-center-100](images/cc_algo1.png)
+
+---
+
+.red[# Inputs]
+![img-center-100](images/cc_algo2.png)
+
+---
+
+.red[# Operation]
+![img-center-100](images/cc_algo3.png)
+
+---
+
+class:middle
+.red[# Output]
+![img-center-80](images/cake.jpg)
+
+##### Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
+
+???
++ define algorithm as instructions for cake
++ Lecture with images
+
+---
+
+class:middle,center
+#Data structures
+
+---
+
+#What is a data structure?
+--
+
++ A way of organizing data in a computer program
+--
+
++ The method of organizing data differs across types, allowing for different applications
+--
+
++ Important to use the right data structure for the proper task
+
+---
+
+class:center,middle
+#Data structures in Python
+##How many can you name?
+
+---
+
+#Lists
+--
+
++ The most versatile data structure in Python
+--
+
++ Can contain multiple data types
+--
+
++ Can be sliced or added to
+--
+
++ Are mutable (can be changed)
+--
+
++ Access individual items by index
+
+--
+
+![img-center-40](images/list1.png)
+
+---
+
+#List functions
+--
+
++ append(_object_) - add object to list
+--
+
++ extend(_list_) - extend original list with elements of specified in list
+--
+
++ insert(_index, object_) - insert object at specified index
+--
+
++ pop(_[index]_) - pop element from list at index and return (default to last value in list)
+--
+
++ remove(_value_) - delete first occurrence of value from list (no return)
+
+---
+
+#List functions
++ reverse - reverse the order of the list in place
+--
+
++ sort() - sort the list
+--
+
++ count(_value_) - count number of occurrences of value
+--
+
++ index(_value_) - find index of first value and return 
+
+--
+
+##For more information, see [the documentation ](https://docs.python.org/2/library/functions.html#list)
+
+---
+
+#When to use a list
+--
+
++ When order matters
+--
+
++ When you can look up the value using a simple numerical index
+--
+
++ When your data might be changed, removed, or extended
+--
+
++ When your data doesn’t need to be unique
+
+---
+
+#Sets
+--
+
++ An unordered collection with no duplicate values
+--
+
++ Created using the keyword “set”
+--
+
++ More limited in the types of objects that can be included (must be hashable, no lists)
+
+--
+
+![img-center-55](images/set1.png)
+
+---
+
+#When to use sets
+--
+
++ When you only need unique values
+--
+
++ When the data types you’re working with are relatively basic (hashable)
+--
+
++ When your data changes
+--
+
++ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
+
+---
+
+#Tuples
+--
+
++ Immutable (unchangable) data structure similar to a list
+--
+
++ Can contain elements of different types (don’t need to be hashable)
+
+--
+
+![img-center-60](images/tuple1.png)
+
+---
+
+#When to use tuples
+--
+
++ When your data doesn’t change
+--
+
++ When performance is important (tuples provide better performance because of their immutability)
+
+---
+
+#Dictionaries
+--
+
++ Stores data in key-value pairs
+--
+
++ Provides lookup based on custom keys (instead of numerical indexes)
+--
+
++ Keys must be unique
+
+--
+
+![img-center-100](images/dict1.png)
+
+---
+
+#When to use a dictionary
+--
+
++ When you need to lookup values by a custom key
+--
+
++ When you need a fast way to lookup values
+--
+
++ When your data needs to be modified
+
+---
+
+#Things to remember with a dictionary
+--
+
++ Key-value pairs aren’t stored in order (use `collections.OrderedDict` if you need to key order is important)
+--
+
++ `collections.defaultdict` is a more flexible implementation for creating a dictionary and adding values
+
+--
+
+##For more information, [check this out](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
+
+---
+
+# Data Structures and Algorithms
+![img-center-70](images/algo_ds.png)
+
+---
+
+# Another example
+
+<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
+--
+
+## What are the inputs, operation, and output here?
+
+---
+
+class:middle,center
+# We often write algorithms in functions
+##&nbsp;
+
+---
+
+class:middle,center
+# We often write algorithms in functions
+## So what's a function?
+
+---
+
+# Functions
+--
+
++ Block of organized, reusable code
+--
+
++ Ideally perform a single action
+--
+
++ Make your code more modular
+
+---
+
+# When do I write a function?
+--
+
++ If you find yourself repeating the same code sequence, it’s time to write a function
+--
+
++ [**D**on’t **R**epeat **Y**ourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+--
+
++ Helps make your code more readable and easier to maintain
+
+---
+
+# Function Example
++ Try this
+
+```python
+def add(x,y):
+  return x + y
+```
+
+--
+
+![img-center-70](images/add_algo0.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+--
+
+![img-center-70](images/add_algo2.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+![img-center-70](images/add_algo3.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+![img-center-70](images/add_algo4.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+![img-center-70](images/add_algo5.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+![img-center-70](images/add_algo6.png)
+
+---
+
+# Function Elements
+![img-center-70](images/add_algo1.png)
+
+![img-center-70](images/add_algo7.png)
+
+
+---
+
+# Debugging
+--
+
++ Everyone makes mistakes
+--
+
++ It's just a matter of how serious they are<br>
+--
+_And fixing them_
+--
+
++ **Semantic errors** -> doing the wrong things
+--
+
++ **Syntax errors** -> using the wrong instructions
+--
+
++ When in doubt, review the documentation
+
+???
++ Students will be introduced to key concepts in identifying and resolving errors
++ This will be done with a lecture/discussion leading into an exercise
++ Class exercise finding errors in code -> slide with code snippets in Markdown with errors
++ deal with issue of correctness
+
+---
+
+# Exercise:
+
++ Debug your neighbor's Python code and verify results
+
+???
++ Students will examine another student's code, run the code, and fix any errors
++ Students will have a better understanding of how to think in code
++ Goal is to get students talking to each other about their code
++ have documentation at end of slides
+
+---
+
+class:center,middle
+# <a href="https://script.google.com/a/macros/datapolitan.com/s/AKfycbwMcE5pcJwZHdbSCN_2epwaXnRLSRPaLbHCAhxaZJ79UXaRpQ_l/exec" target="_blank">Click to submit your work</a>
+
+---
+
+class:middle,center
+# Code Review
+
+???
++ Students will review select code examples
++ Goal is to model a collaborative process for data analysis
++ Time buffer for end of class
+
+---
+
+name:pandas-reference
 # Key `pandas` Functions
 + [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
 + [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of data frame
@@ -606,7 +1038,7 @@ class:center,middle
 
 + Data Structures
 --
-![img-right-45](images/algo_ds.png)
+
 + Algorithms
 --
 
@@ -674,7 +1106,7 @@ and there are [a lot of packages](https://pypi.python.org/pypi/?)
 ---
 
 class:center, middle
-#THANK YOU!
+# THANK YOU!
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
