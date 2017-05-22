@@ -92,6 +92,9 @@ class:center,middle
 
 + Please take any phone conversations into the hall to not disrupt the class
 
+???
++ Expectations and norms are established with the class
+
 ---
 
 # The Value of Data
@@ -106,12 +109,19 @@ class:center,middle
 
 ![img-center-100](images/311data.png)
 
+???
++ Discuss the value of data in the context of analysis and city operations
++ Introduce critical thinking about data and how data can be used for insight
+
 ---
 
 class:middle
 > Data is only as valuable as the decisions it enables. 
 
 ## -[Ion Stoica](https://twitter.com/databricks/status/810190036624875520)
+
+???
++ Discuss having the right data for the problem at hand
 
 ---
 
@@ -121,6 +131,9 @@ class:middle
 >“Analysis is simply the pursuit of understanding, usually through detailed inspection or comparison”
 
 ## - Carter Hewgley, Director of Analytics, Center for Government Excellence
+
+???
++ Frame the class discussion with basic definition of analysis
 
 ---
 
@@ -172,6 +185,9 @@ Source: Justin Baeder, [link to original](https://www.flickr.com/photos/justinba
 
 + Need to document analytical steps
 
+???
++ Establish key reasons for using a programming language
+
 ---
 
 ![img-right-40](https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png)
@@ -186,10 +202,16 @@ Source: Justin Baeder, [link to original](https://www.flickr.com/photos/justinba
 
 + Strong support for data analysis and visualization, as well as other programming tasks
 
+???
++ Provide basic facts on Python for context
+
 ---
 
 class:center,middle
 # What You Can Do With Python
+
+???
++ Provide a real-world example of using a programming language to answer a need in city government
 
 ---
 
@@ -198,6 +220,9 @@ class:center,middle
 ![img-center-40](images/neworleansfire.jpeg)
 .caption[Image Credit: Michael Barnett [CC BY-SA 2.5](http://creativecommons.org/licenses/by-sa/2.5), via Wikimedia Commons]
 
+???
++ Provide a real-world example of using a programming language to answer a need in city government
+
 ---
 
 # Targeted Outreach Saves Lives
@@ -205,6 +230,8 @@ class:center,middle
 ![img-center-90](images/nolasmokealarm.png)
 .caption[Image Credit: City of New Orleans, via [nola.gov](http://nola.gov/performance-and-accountability/nolalytics/files/full-report-on-analytics-informed-smoke-alarm-outr/)]
 
+???
++ Provide a real-world example of using a programming language to answer a need in city government
 
 ---
 
@@ -212,6 +239,9 @@ class:center,middle
 
 ![img-center-90](images/nolaimpact.png)
 .caption[Image Credit: City of New Orleans, via [nola.gov](http://nola.gov/performance-and-accountability/nolalytics/files/full-report-on-analytics-informed-smoke-alarm-outr/)]
+
+???
++ Provide a real-world example of using a programming language to answer a need in city government
 
 ---
 
@@ -232,6 +262,9 @@ class:center,middle
 
 + Python has more potential to build custom operations and record their operation for future use
 
+???
++ Compare Python directly to Excel for context
+
 ---
 
 # Important Things to Keep in Mind
@@ -248,31 +281,23 @@ class:center,middle
 
 + For more on the difference, [check this out](https://www.digitalocean.com/community/tutorials/python-2-vs-python-3-practical-considerations-2)
 
+???
++ Key ideas are introduced for how to use Python
+
 ---
 
+exclude:true
 # Python Facts
---
 
 + Comes from Monty Python and Flying Circus
---
-
 + Very flexible and highly readable
---
-
 + Can work on the commandline and in scripts
---
-
-+ But we're going to use a [Notebook](http://jupyter.org/)
---
-
-+ Look in your packet for the weblink to start your own Notebook
---
-![img-right-30](images/notebook_start.png)
-+ Start a new Python 3 Notebook
 
 ---
 
-# [Jupyter Notebook](http://jupyter.org/)
+# Getting Started
+
++ We're going to use a [Notebook](http://jupyter.org/)
 --
 
 + Web application that runs code, as well as visualizations and explanatory text
@@ -281,16 +306,10 @@ class:center,middle
 + Can save notebooks and share them with others
 --
 
-+ Acts as a self-contained, visual programming environment, either locally or on a remote server
++ Look in your packet for the weblink to start your own Notebook
 --
-
-+ Each webpage is a self-contained program (you can't share variables between webpages)
---
-
-+ Great for experimenting, prototyping, or simple scripts
---
-
-+ Works in [multiple programming languages](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) (with proper configuration)
+![img-right-30](images/notebook_start.png)
++ Start a new Python 3 Notebook
 
 ---
 
@@ -311,6 +330,12 @@ class:center,middle
 --
 
 + You can re-run the block as many times as you'd like
+--
+
++ Each webpage is a self-contained program (you can't share variables between webpages)
+--
+
++ Great for experimenting, prototyping, or simple scripts
 
 ---
 
@@ -538,20 +563,20 @@ but it helps
 
 # Function Chaining
 ```python
-df.plot.scatter(x='waiting',y='eruptions') # Create a scatter plot
+df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 ```
 --
 
-+ `df` is our dataframe object
++ `df` is our dataframe object (the noun)
 --
 
-+ We call the `plot` attribute
++ We call the `plot` function (the verb)
 --
 
-+ We then add the `scatter` function
++ We give Python three parameters telling it how to plot (adverbs that modify the verg)
 --
 
-+ We pass the parameters `x='waiting',y='eruptions'` to tell Python how to plot the data
++ "Create a `scatter` plot with the parameters `x='waiting',y='eruptions'`
 --
 
 + We'll experiment more with this after the break
@@ -560,7 +585,7 @@ df.plot.scatter(x='waiting',y='eruptions') # Create a scatter plot
 
 class:center, middle
 
-#10 MINUTE BREAK
+# 10 MINUTE BREAK
 ![img-center-50](http://imgs.xkcd.com/comics/python.png)
 Source: http://xkcd.com/353/
 
@@ -576,10 +601,57 @@ Source: http://xkcd.com/353/
 ---
 
 # Summary Statistics on 311 Data
-# Your Turn
 + How many columns are in the data?
 + How many rows are in the data?
 + What is the time range of the data?
++ What is the result of running `describe()`?
++ Work together and help each other out
+
+---
+
+# Data Types
++ Run `df.dtypes`
++ What are the results?
++ What do you think they mean?
+
+???
++ Introduce the concept of data types
+
+---
+
+# Data Types
++ Python has various containers that define the type of data
++ Excel has the same (think dates, numbers, text, percentages, etc)
++ In our example there are `int64` and `float64`
++ What do you think these are?
+
+???
+
+---
+
+# Integers and Floats
++ Both are [numeric types](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex)
++ Integers are whole numbers (decimals get dropped)
++ Floats include the decimal points
+
+???
++ Introduce data types and the different operations
++ Key reference: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+
+---
+
+# Other Types of Interest
++ Boolean (`True` and `False`) 
++ Strings 
+
+---
+
+class:center,middle
+# Let's Get Back to the Data
+
+---
+
+# Going Deeper into the Data
 + Which borough has the most complaints?
 + Which Complaint Type has the most service requests?<br>
 And why might that be a little misleading?
@@ -595,81 +667,7 @@ And why might that be a little misleading?
 
 ---
 
-# Exploratory Data Analysis
---
 
-+ Goal -> Discover patterns in the data
---
-
-+ Understand the context
---
-
-+ Summarize fields
---
-
-+ Use graphical representations of the data
---
-
-+ Explore outliers
-
---
-
-####Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley
-
---- 
-
-class:center,middle
-# Lunch
-
----
-
-class:center,middle
-# Welcome Back
-
----
-
-class:center,middle
-# Algorithms
-
----
-
-# What is an Algorithm?
---
-
-+ A precise set of instructions required to accomplish a task
---
-
-+ Comprised of three components: Inputs, Operation, Output
---
-
-+ Each step in the operation must be clearly defined and work the same with any input
-
----
-
-# [Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
-![img-center-100](images/cc_algo1.png)
-
----
-
-.red[# Inputs]
-![img-center-100](images/cc_algo2.png)
-
----
-
-.red[# Operation]
-![img-center-100](images/cc_algo3.png)
-
----
-
-class:middle
-.red[# Output]
-![img-center-80](images/cake.jpg)
-
-##### Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
-
-???
-+ define algorithm as instructions for cake
-+ Lecture with images
 
 ---
 
@@ -693,7 +691,6 @@ class:middle,center
 
 class:center,middle
 # Data structures in Python
-## How many can you name?
 
 ---
 
@@ -770,6 +767,74 @@ class:center,middle
 --
 
 + When your data doesn’t need to be unique
+
+
+
+---
+
+exclude:true
+# Exploratory Data Analysis
++ Goal -> Discover patterns in the data
++ Understand the context
++ Summarize fields
++ Use graphical representations of the data
++ Explore outliers
+####Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley
+
+--- 
+
+class:center,middle
+# Lunch
+
+---
+
+class:center,middle
+# Welcome Back
+
+---
+
+class:center,middle
+# Algorithms
+
+---
+
+# What is an Algorithm?
+--
+
++ A precise set of instructions required to accomplish a task
+--
+
++ Comprised of three components: Inputs, Operation, Output
+--
+
++ Each step in the operation must be clearly defined and work the same with any input
+
+---
+
+# [Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
+![img-center-100](images/cc_algo1.png)
+
+---
+
+.red[# Inputs]
+![img-center-100](images/cc_algo2.png)
+
+---
+
+.red[# Operation]
+![img-center-100](images/cc_algo3.png)
+
+---
+
+class:middle
+.red[# Output]
+![img-center-80](images/cake.jpg)
+
+##### Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
+
+???
++ define algorithm as instructions for cake
++ Lecture with images
 
 ---
 
@@ -1104,6 +1169,9 @@ and there are [a lot of packages](https://pypi.python.org/pypi/?)
 --
 
 + For more on the difference, [check this out](https://www.digitalocean.com/community/tutorials/python-2-vs-python-3-practical-considerations-2)
+--
+
++ Jupyter Notebooks work in [multiple programming languages](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) (with proper configuration)
 
 ---
 
