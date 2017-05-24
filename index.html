@@ -403,13 +403,11 @@ Source: http://xkcd.com/353/
 print(c) # print the value of variable c
 ```
 --
-+ This is a pre-defined and reusable operation
++ This is a pre-defined operation (like `=SUM` in Excel)
 --
 
 + Functions are like verbs describing an action
---
 
-+ Ideally perform a single action (like `print()`)
 ---
 
 exclude:true
@@ -601,6 +599,16 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 
 + We'll experiment more with this later
 
+--- 
+
+class:center,middle
+# Lunch
+
+---
+
+class:center,middle
+# Welcome Back
+
 ---
 
 # 311 Data Exercise
@@ -695,101 +703,65 @@ df_subset = df[[col1,col2,col3]]
 
 ---
 
+exclude:true
 class:middle,center
 # Data structures
 
 ---
 
+exclude:true
 # What is a data structure?
---
-
 + A way of organizing data in a computer program
---
-
 + The method of organizing data differs across types, allowing for different applications
---
-
 + Important to use the right data structure for the proper task
 
 ---
 
+exclude:true
 class:center,middle
 # Data structures in Python
 
 ---
 
+exclude:true
 # Lists
---
-
 + The most versatile data structure in Python
---
-
 + Can contain multiple data types
---
-
 + Can be sliced or added to
---
-
 + Are mutable (can be changed)
---
-
 + Access individual items by index
 
---
 
 ![img-center-40](images/list1.png)
 
 ---
 
+exclude:true
 # List functions
---
-
 + append(_object_) - add object to list
---
-
 + extend(_list_) - extend original list with elements of specified in list
---
-
 + insert(_index, object_) - insert object at specified index
---
-
 + pop(_[index]_) - pop element from list at index and return (default to last value in list)
---
-
 + remove(_value_) - delete first occurrence of value from list (no return)
 
 ---
 
+exclude:true
 # List functions
 + reverse - reverse the order of the list in place
---
-
 + sort() - sort the list
---
-
 + count(_value_) - count number of occurrences of value
---
-
 + index(_value_) - find index of first value and return 
-
---
 
 ## For more information, see [the documentation ](https://docs.python.org/2/library/functions.html#list)
 
 ---
 
+exclude:true
 # When to use a list
---
-
 + When order matters
---
-
 + When you can look up the value using a simple numerical index
---
-
 + When your data might be changed, removed, or extended
---
-
 + When your data doesn’t need to be unique
 
 ---
@@ -808,16 +780,6 @@ exclude:true
 + Use graphical representations of the data
 + Explore outliers
 ####Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley
-
---- 
-
-class:center,middle
-# Lunch
-
----
-
-class:center,middle
-# Welcome Back
 
 ---
 
