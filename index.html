@@ -37,26 +37,29 @@ class:center,middle
 + Where you work
 + What you've done with code (any code)
 
-# .blue.center[Please fill out the Participant Information Form]
+## .blue.center[Please fill out the Participant Information Form]
 
 ---
 
 # What to Expect Today
 --
 
-+ 10:15 – Welcome and Introductions
++ Introduction to Python
 --
 
-+ 10:25 – What is Python?
++ Why use Python?
 --
 
-+ 11:10 – 10 min break
++ Using Python in Data Analysis
 --
 
-+ 11:20 - Exercise
++ Getting Familiar: Python Syntax + Jupyter Notebook
 --
 
-+ 12:30 – Dismissal
++ 311 Data Analysis
+--
+
++ Presentations!
 
 ---
 
@@ -1242,7 +1245,20 @@ class:center, middle
 
   ga('create', 'UA-55673554-2', 'auto');
   ga('send', 'pageview');
+    </script>
+    <script>
 
+	var renderer = new marked.Renderer();
+	renderer.listitem = function(text) {
+	if (/^\s*\[[x ]\]\s*/.test(text)) {
+	text = text
+	  .replace(/^\s*\[ \]\s*/, '<i class="empty checkbox icon"></i> ')
+	  .replace(/^\s*\[x\]\s*/, '<i class="checked checkbox icon"></i> ');
+	    return '<li style="list-style: none">' + text + '</li>';
+	  } else {
+	    return '<li>' + text + '</li>';
+	  }
+	};
 </script>
   </body>
 </html>
