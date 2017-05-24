@@ -438,6 +438,11 @@ print(c) # print the value of variable c
 + [`pandas`](http://pandas.pydata.org/) provides data analytics functionality similar to a spreadsheet 
 + [`matplotlib`](http://matplotlib.org/) provides data visualization functionality
 
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
 ---
 
 # Old Faithful Exercise - Data Download
@@ -550,14 +555,9 @@ df.plot.scatter(x='waiting',y='eruptions') # Create a scatter plot
 ```python
 car.door.open() # Object car has attribute door with function open
 ```
---
-+ This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
---
 
-+ You don't need to fully understand this to program in Python&nbsp;
---
-
-but it helps
+<!-- + This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
++ You don't need to fully understand this to program in Python&nbsp;but it helps -->
 
 ---
 
@@ -573,10 +573,10 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 + We call the `plot` function (the verb)
 --
 
-+ We give Python three parameters telling it how to plot (adverbs that modify the verg)
++ We give Python three parameters telling it how to plot (adverbs that modify the verb)
 --
 
-+ "Create a `scatter` plot with the parameters `x='waiting',y='eruptions'`
++ _"Create a `scatter` plot with the parameters `x='waiting',y='eruptions'`"_
 --
 
 + We'll experiment more with this after the break
@@ -667,12 +667,16 @@ And why might that be a little misleading?
 ---
 
 # Introducing `GroupBy`
++ What is a PivotTable and when do you use it?
++ `GroupBy` is the same
 
 ---
 
 # Subsetting the Columns
-
-
+```python
+df_subset_1col = df['col1']
+df_subset = df[[col1,col2,col3]]
+```
 ???
 + Discuss how to subset the columns
 + Prepare to introduce data structures in Python
