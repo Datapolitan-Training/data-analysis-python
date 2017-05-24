@@ -382,6 +382,19 @@ c = a + b # add the value of a and b, and assign to variable c
 
 ---
 
+# Your turn
++ Calculate the sum of `5` and `7`, assign the result to a variable and print the result
+
+---
+
+class:center, middle
+
+# 15 MINUTE BREAK
+![img-center-50](http://imgs.xkcd.com/comics/python.png)
+Source: http://xkcd.com/353/
+
+---
+
 # Functions
 --
 
@@ -402,14 +415,9 @@ print(c) # print the value of variable c
 exclude:true
 # Benefits of Functions
 + Make your code more modular
-+ Can write you're own functions
++ Can write your own functions
 + For now, we'll use functions created by others
 + These are usually made avaiable through packages
-
----
-
-# Your turn
-+ Calculate the sum of `5` and `7`, assign the result to a variable and print the result
 
 ---
 
@@ -441,12 +449,19 @@ exclude:true
 
 # Important Packages for Exercises
 + [`pandas`](http://pandas.pydata.org/) provides data analytics functionality similar to a spreadsheet 
+--
+
 + [`matplotlib`](http://matplotlib.org/) provides data visualization functionality
+--
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
+
+--
+
++ We alias them to make it easier to distinguish functions
 
 ---
 
@@ -584,15 +599,7 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 + _"Create a `scatter` plot with the parameters `x='waiting',y='eruptions'`"_
 --
 
-+ We'll experiment more with this after the break
-
----
-
-class:center, middle
-
-# 10 MINUTE BREAK
-![img-center-50](http://imgs.xkcd.com/comics/python.png)
-Source: http://xkcd.com/353/
++ We'll experiment more with this later
 
 ---
 
@@ -1230,9 +1237,11 @@ class:center, middle
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create(
-        // {
-        //   slideNumberFormat: ""}
+      var slideshow = remark.create({
+              // {
+              //   slideNumberFormat: ""}
+              countIncrementalSlides: false
+          }
         );
     </script>
     <script>
@@ -1244,19 +1253,5 @@ class:center, middle
   ga('create', 'UA-55673554-2', 'auto');
   ga('send', 'pageview');
     </script>
-    <script>
-
-	var renderer = new marked.Renderer();
-	renderer.listitem = function(text) {
-	if (/^\s*\[[x ]\]\s*/.test(text)) {
-	text = text
-	  .replace(/^\s*\[ \]\s*/, '<i class="empty checkbox icon"></i> ')
-	  .replace(/^\s*\[x\]\s*/, '<i class="checked checkbox icon"></i> ');
-	    return '<li style="list-style: none">' + text + '</li>';
-	  } else {
-	    return '<li>' + text + '</li>';
-	  }
-	};
-</script>
   </body>
 </html>
