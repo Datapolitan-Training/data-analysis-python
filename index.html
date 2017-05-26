@@ -568,6 +568,7 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 ![img-center-60](images/faithful_scatter.png)
 ---
 
+exclude:true
 # Function Chaining
 --
 
@@ -590,7 +591,7 @@ car.door.open() # Object car has attribute door with function open
 
 ---
 
-# Function Chaining
+# Breaking Down the Code
 
 ```python
 df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
@@ -637,6 +638,7 @@ class:center,middle
 + How many rows are in the data?
 + What is the time range of the data?
 + What is the result of running `describe()`?
++ Try creating a histogram
 + Work together and help each other out
 
 ---
@@ -704,7 +706,12 @@ And why might that be a little misleading?
 
 ---
 
-# Subsetting the Columns
+class:center,middle
+# Filtering and Sorting
+
+---
+
+# Selecting Columns
 ```python
 df_subset_1col = df['col1']
 df_subset = df[[col1,col2,col3]]
@@ -712,6 +719,17 @@ df_subset = df[[col1,col2,col3]]
 ???
 + Discuss how to subset the columns
 + Prepare to introduce data structures in Python
+
+---
+
+# Selecting Rows
+```python
+# filter rows for just those containing noise
+df[df['Complaint Type'].str.contains('Noise')]
+```
++ Filter your data for derelict vehicles
++ Count by borough
++ Count by community district
 
 ---
 
@@ -778,6 +796,7 @@ exclude:true
 
 ---
 
+exclude:true
 # Your Turn
 + Find the Location Type that has the most rodent complaints
 + We'll be around to help
