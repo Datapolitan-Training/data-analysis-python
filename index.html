@@ -588,20 +588,6 @@ df.hist() # Create a histogram
 df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot 
 ```
 ![img-center-60](images/faithful_scatter.png)
----
-
-exclude:true
-# Function Chaining
-+ We can string operations together using the [dot method](http://reeborg.ca/docs/oop_py_en/oop.html)
-+ This means we can chain operations using a simple dot between operations
-+ Python executes these from left to right (like we read)
-+ Example:
-```python
-car.door.open() # Object car has attribute door with function open
-```
-
-<!-- + This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
-+ You don't need to fully understand this to program in Python&nbsp;but it helps -->
 
 ---
 
@@ -745,11 +731,94 @@ class:center,middle
 
 ---
 
-# Introducing `GroupBy`
+# Aggregating Data
+--
+
 + What is a PivotTable in Excel and when do you use it?
 --
 
-+ `GroupBy` is the same
++ `GroupBy` is the same for making summaries
+--
+
+```python
+df.groupby('Column you want to group')['Column you want to count'].count()
+```
+--
++ In this case
+```python
+df.groupby('Borough')['Unique Key'].count()
+```
+--
+![img-center-50](images/borough_count_table.png)
+
+---
+
+# Aggregating Data
++ To sort the list
+```python
+df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+```
+--
+
+![img-center-50](images/borough_count_table_sorted.png)
+--
+
++ This is called **function chaining**
+
+---
+
+# Function Chaining
+--
+
++ We can string operations together using the [dot method](http://reeborg.ca/docs/oop_py_en/oop.html)
+--
+
++ This means we can chain operations using a simple dot between operations
+--
+
++ Python executes these from left to right (like we read)
+--
+
++ Example:
+```python
+df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+```
+
+---
+# Function Chaining
+```python
+df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+```
+--
+
++ We first run the `groupby()` function to aggregate the values
+--
+
++ Then the results using the `count()` function
+--
+
++ Then sort the result by values using the `sort_values()` function
+--
+
++ What if we want to plot the result?
+--
+
++ We just add a `.plot()` (with some parameters)
+--
+
++ Try it yourself
+
+<!-- + This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
++ You don't need to fully understand this to program in Python&nbsp;but it helps -->
+
+---
+
+exclude:true
+# Plotting Service Requests by Borough
+
+```python
+df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False).plot(kind='bar',ylim=(0,75000),title='Count of NYC 311 Service Requests by Borough\n15 October - 20 November 2016\nSource: NYC Open Data Portal')
+```
 
 ---
 
