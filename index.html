@@ -813,13 +813,16 @@ df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
 
 ---
 
-exclude:true
 # Plotting Service Requests by Borough
 
 ```python
-df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False).plot(kind='bar',ylim=(0,75000),title='Count of NYC 311 Service Requests by Borough\n15 October - 20 November 2016\nSource: NYC Open Data Portal')
+df.groupby('Borough')['Unique Key']\
+	.count()\
+	.sort_values(ascending=False)\
+	.plot(kind='bar',ylim=(0,75000),\
+	title='Count of NYC 311 Service Requests by Borough')
 ```
-
+## The `\` mark just lets me break the code lines so it'll fit
 ---
 
 class:center,middle
@@ -828,10 +831,21 @@ class:center,middle
 ---
 
 # Selecting Columns
++ Remember to select a column of data, we do this:
 ```python
-df_subset_1col = df['col1']
-df_subset = df[[col1,col2,col3]]
+df['column1']
 ```
+--
++ To select multiple columns, we do this:
+```python
+df[['column1','column2','column3']]
+```
+--
++ Select just the unique key, created date, complaint type, descriptor, Community Board, borough, and anything else you might think be important
+--
+
++ Hint: The column names have to be exact. Use `df.columns` to get a list of column names
+
 ???
 + Discuss how to subset the columns
 + Prepare to introduce data structures in Python
@@ -840,9 +854,30 @@ df_subset = df[[col1,col2,col3]]
 
 # Selecting Rows
 ```python
-# filter rows for just those containing noise
-df[df['Complaint Type'].str.contains('Noise')]
+# filter rows for just those containing a particular value
+df[df['Column Name'] == 'Value']
 ```
++ `==` means "equivalent to" (as opposed to `=`, which is for assignments)
+
+---
+
+# Selecting Rows
++ For example
+```python
+df[df['Complaint Type']=='Derelict Vehicle']
+```
+--
++ This will filter for only the derelict vehicles like this one
+![img-center-50](images/derelictvan.png)
+--
+
++ Except
+
+![img-left-50](images/derelict_veh_complaints_box.png)
+
+---
+
+# Your Turn
 + Filter your data for derelict vehicles
 + Count by borough
 + Count by community district
