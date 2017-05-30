@@ -420,9 +420,10 @@ c = a + b # add the value of a and b, and assign to variable c
 
 ---
 
+name:morning-break
 class:center, middle
 
-# 15 MINUTE BREAK
+# 15 Min Break
 ![img-center-50](http://imgs.xkcd.com/comics/python.png)
 Source: http://xkcd.com/353/
 
@@ -613,7 +614,7 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 + We'll expermient more with this later
 
 ---
-
+name:lunch
 class:center,middle
 # Lunch
 ![img-center-60](https://imgs.xkcd.com/comics/automation.png)
@@ -625,12 +626,110 @@ class:center,middle
 
 ---
 
+class:center,middle
+# Just Some Quick Points
+
+---
+
+# Data Structures
+--
+
++ Remember the `df` object?
+--
+
++ It's called a [DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe) 
+--
+
++ It's a basic data structure that stores our data
+--
+
++ Data structures are a way of organizing data in a computer program
+--
+
++ The method of organizing data differs across types, allowing for different applications
+--
+
++ Python has [lots of different data structures](http://interactivepython.org/runestone/static/pythonds/index.html) that we aren't going to talk about
+
+???
++ Briefly introduce the concept of data structures
++ Demystify the idea for further study
+---
+
+class:center,middle
+# Algorithms
+
+---
+
+# What is an Algorithm?
+--
+
++ Step by step instructions for any task
+--
+
++ Inputs = Ingredients
+--
+
++ Operation = Baking Instructions
+--
+
++ Output = Dessert
+--
+
++ Each step in the operation must be clearly defined and work the same with any input
+
+???
++ Emphasize algorithm as process
++ Demystify and empower students
+
+---
+
+# [Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
+![img-center-100](images/cc_algo1.png)
+
+---
+
+.red[# Inputs]
+![img-center-100](images/cc_algo2.png)
+
+---
+
+.red[# Operation]
+![img-center-100](images/cc_algo3.png)
+
+---
+
+class:middle
+.red[# Output]
+![img-center-80](images/cake.jpg)
+
+##### Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
+
+???
++ define algorithm as instructions for cake
++ Lecture with images
+
+---
+
+# Data Structures and Algorithms
+![img-center-70](images/algo_ds.png)
+
+---
+
+class:center,middle
+# That's as technical as we'll be getting today<br>(I promise)
+![img-center-90](https://imgs.xkcd.com/comics/algorithms.png)
+Source: https://xkcd.com/1667/
+
+---
+
 # 311 Data Exercise
 + Load the data from `https://s3.amazonaws.com/datapolitan-training-files/311_Requests_Oct15_Nov20.csv`
 + Don't add the `index_col=0` that we had before
 + Ignore the warning you get ([more on that warning](http://stackoverflow.com/a/27232309/1808021))
 ![img-center-90](images/error.png)
 + Inspect the data based on the techniques we just used
++ You can use the [`311_exercise.ipynb`](code\311_exercise.ipynb) file as we go along
 
 ---
 
@@ -669,6 +768,8 @@ class:center,middle
 + What do you think these are?
 
 ???
++ Overview of data types in the context of Excel operations they should be familiar with
++ Start introduction with numeric types
 
 ---
 
@@ -706,6 +807,18 @@ class:center,middle
 --
 
 ## [More on Python Data Types here](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-python-3)
+
+???
++ Discuss other key data types
++ Provide links to additional information
+
+---
+
+name:afternoon-break
+class:center,middle
+# 15 Min Break
+![img-center-80](https://imgs.xkcd.com/comics/here_to_help.png)
+Source: https://xkcd.com/1831/
 
 ---
 
@@ -841,10 +954,15 @@ df['column1']
 df[['column1','column2','column3']]
 ```
 --
-+ Select just the unique key, created date, complaint type, descriptor, Community Board, borough, and anything else you might think be important
++ We can assign this subset to another dataframe
+```python
+df2 = df[['column1','column2','column3']]
+```
+--
++ Identify key columns and assign them to a new dataframe
 --
 
-+ Hint: The column names have to be exact. Use `df.columns` to get a list of column names
++ Hint: Use `df.columns` to get exact column names
 
 ???
 + Discuss how to subset the columns
@@ -854,33 +972,81 @@ df[['column1','column2','column3']]
 
 # Selecting Rows
 ```python
-# filter rows for just those containing a particular value
 df[df['Column Name'] == 'Value']
 ```
-+ `==` means "equivalent to" (as opposed to `=`, which is for assignments)
+--
++ `df['Column Name'] == 'Value'` is the test we use to filter on
+--
+
++ `==` means "equivalent to" 
+--
+
++ `=` is for assigning value
+--
+
++ We can also assign this subset to another dataframe
+```python
+df3 = df[df['Column Name'] == 'Value']
+```
 
 ---
 
 # Selecting Rows
-+ For example
++ For example 
 ```python
-df[df['Complaint Type']=='Derelict Vehicle']
+df[df['Complaint Type']=='Noise']
 ```
 --
-+ This will filter for only the derelict vehicles like this one
-![img-center-50](images/derelictvan.png)
++ This will filter for Complaint Type "Noise"
 --
 
-+ Except
++ We can count these
+```python
+df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
+```
+--
+![img-right-45](images/noise_count_table_box.png)
++ But
+--
 
-![img-left-50](images/derelict_veh_complaints_box.png)
++ How do we match these?
 
 ---
 
-# Your Turn
-+ Filter your data for derelict vehicles
-+ Count by borough
-+ Count by community district
+# Selecting Rows - Fuzzy Matching
++ To do a fuzzy matching, we need to chain another function
+```python
+df[df['Complaint Type'].str.contains('Noise')]
+```
+--
++ `str` is the string [object in Python](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
+--
+
++ It has a function called `contains()` that will do a fuzzy match
+--
+
++ We pass it the parameter we're looking for 'Noise'
+---
+
+# Try It Out
+![img-right-40](images/derelict_veh_complaints_box.png)
++ Filter your data for both categories of derelict vehicles
++ Count the number of complaints by borough
++ Count the number of complaints by community district
+
+???
++ Students should find that Queens has the most (2387)
+```python
+df[df['Complaint Type'].str.contains('Derelict Vehicle')]\
+	.groupby('Borough')['Unique Key']\
+	.count()
+```
++ Students should find that 12 Queens has the most (447)
+```python
+df[df['Complaint Type'].str.contains('Derelict Vehicle')]\
+	.groupby('Community Board')['Unique Key']\
+	.count().sort_values(ascending=False)
+```
 
 ---
 
@@ -965,61 +1131,6 @@ exclude:true
 
 ---
 
-class:center,middle
-# Algorithms
-
----
-
-# What is an Algorithm?
---
-
-+ Step by step instructions for any task
---
-
-+ Inputs = Ingredients
---
-
-+ Operation = Baking Instructions
---
-
-+ Output = Dessert
---
-
-+ Each step in the operation must be clearly defined and work the same with any input
-
-???
-+ Emphasize algorithm as process
-+ Demystify and empower students
-
----
-
-# [Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
-![img-center-100](images/cc_algo1.png)
-
----
-
-.red[# Inputs]
-![img-center-100](images/cc_algo2.png)
-
----
-
-.red[# Operation]
-![img-center-100](images/cc_algo3.png)
-
----
-
-class:middle
-.red[# Output]
-![img-center-80](images/cake.jpg)
-
-##### Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
-
-???
-+ define algorithm as instructions for cake
-+ Lecture with images
-
----
-
 exclude:true
 
 # Sets
@@ -1078,12 +1189,6 @@ exclude:true
 + `collections.defaultdict` is a more flexible implementation for creating a dictionary and adding values
 
 ## For more information, [check this out](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
-
----
-
-exclude:true
-# Data Structures and Algorithms
-![img-center-70](images/algo_ds.png)
 
 ---
 
@@ -1188,19 +1293,17 @@ exclude:true
 
 ---
 
-# 311: Your Turn
---
+name:final-exercise
+# Your Turn
 
-+ Switch out derelict vehicles for another complaint type
---
-
-+ Look at a different borough, ZIP code, or community board
---
-
-+ Look at day of the week instead of hour
---
-
+![img-right-40](images/new_notebook.png)
++ Open a new Jupyter Notebook
++ Load the data and filter for a different complaint type
++ Find the borough, ZIP code, or community board with the most complaints
++ Try grouping by another column (Location Type or Agency)
++ Try to find a story in the data (if you can)
 + Have fun
++ Here's [a list of functions](#pandas-reference)
 
 ---
 
@@ -1231,7 +1334,7 @@ _And fixing them_
 
 ---
 
-# Exercise:
+# Exercise
 
 + Debug your neighbor's Python code and verify results
 
@@ -1259,16 +1362,17 @@ class:middle,center
 ---
 
 name:pandas-reference
-# Key `pandas` Functions
+# Key `pandas` Functions (Back to [exercise](#final-exercise))
 + [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
-+ [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of data frame
++ [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of DataFrame
 + [`count()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.count.html) - count of all rows in column
 + [`max()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.max.html) & [`min()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.min.html) - max and min values in column
 + [`mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) & [`median()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.median.html) - mean and median values of numbers in column
-+ [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for data frame
++ [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for DataFrame
 + [`hist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) - create a histogram of values
-+ [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in data frame
++ [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in DataFrame
 + [`sort_values()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html) - sort by values
+
 
 ---
 
@@ -1339,9 +1443,6 @@ and there are [a lot of packages](https://pypi.python.org/pypi/?)
 --
 
 + For more on the difference, [check this out](https://www.digitalocean.com/community/tutorials/python-2-vs-python-3-practical-considerations-2)
---
-
-+ Jupyter Notebooks work in [multiple programming languages](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) (with proper configuration)
 
 ---
 
