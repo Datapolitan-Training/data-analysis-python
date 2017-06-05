@@ -614,17 +614,6 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 + We'll expermient more with this later
 
 ---
-name:lunch
-class:center,middle
-# Lunch
-![img-center-60](https://imgs.xkcd.com/comics/automation.png)
-Source: https://xkcd.com/1319/
----
-
-class:center,middle
-# Welcome Back
-
----
 
 class:center,middle
 # Just Some Quick Points
@@ -814,16 +803,31 @@ Source: https://xkcd.com/1667/
 
 ---
 
-name:afternoon-break
+name:lunch
 class:center,middle
-# 15 Min Break
-![img-center-80](https://imgs.xkcd.com/comics/here_to_help.png)
-Source: https://xkcd.com/1831/
+# Lunch
+![img-center-60](https://imgs.xkcd.com/comics/automation.png)
+Source: https://xkcd.com/1319/
+
+---
+
+class:center,middle
+# Welcome Back
 
 ---
 
 class:center,middle
 # Let's Get Back to the Data
+
+---
+
+# Summary Statistics on 311 Data
++ How many columns are in the data?
++ How many rows are in the data?
++ What is the time range of the data?
++ What is the result of running `describe()`?
++ Try creating a histogram
++ Work together and help each other out
 
 ---
 
@@ -898,6 +902,7 @@ df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
 ```
 
 ---
+
 # Function Chaining
 ```python
 df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
@@ -936,6 +941,15 @@ df.groupby('Borough')['Unique Key']\
 	title='Count of NYC 311 Service Requests by Borough')
 ```
 ## The `\` mark just lets me break the code lines so it'll fit
+
+---
+
+name:afternoon-break
+class:center,middle
+# 15 Min Break
+![img-center-80](https://imgs.xkcd.com/comics/here_to_help.png)
+Source: https://xkcd.com/1831/
+
 ---
 
 class:center,middle
