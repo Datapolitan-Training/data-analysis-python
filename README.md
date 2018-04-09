@@ -15,12 +15,17 @@
 
 # Outline
 + Introduction (Richard)
-  + Class Schedule and Expectations
+  + Class Schedule and Expectations (Richard)
+  + Housekeeping (Richard)
   + What is Python? (Julia)
-  + Overview of Data Analysis (Julia)
-+ Today's Question
-  + Understanding Noise Complaints in 311 Data
-  + See Finished Example
+  + Value of Data (Julia)
+  + What is Analysis? (Julia)
+  + What is Python? (Julia)
+  + Python vs Excel (Julia)
++ Today's Question (Julia)
++ Getting Started (Richard)
+  + Using Jupyter Notebook (Richard)
+  + Python Syntax (Richard)
 + Data Collection
   + Open 311 Dataset in Python
   + Explore Data Structures and Types
