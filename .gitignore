@@ -3,3 +3,5 @@
 *.sublime*
 *.pptx
 *.pages
+_rejects/
+setup_ec2.sh
