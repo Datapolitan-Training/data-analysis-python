@@ -14,10 +14,10 @@
 + Analysts working in city government with basic programming knowledge and/or experience performing advanced analysis in Excel (nested formulas with conditionals, PivotTables, and macros)
 
 # Outline
-+ Introduction
++ Introduction (Richard)
   + Class Schedule and Expectations
-  + What is Python?
-  + Overview of Data Analysis
+  + What is Python? (Julia)
+  + Overview of Data Analysis (Julia)
 + Today's Question
   + Understanding Noise Complaints in 311 Data
   + See Finished Example
