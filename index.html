@@ -24,8 +24,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
     </p>
 </div>
 
-<!--  -->
-
 --
 
 class:center, middle
@@ -52,6 +50,8 @@ class:center,middle
 ---
 
 # What to Expect Today
+???
++ Facilitator sets key expectations for the class
 --
 
 + Introduction to Python
@@ -1015,6 +1015,12 @@ df3 = df[df['Column Name'] == 'Value']
 
 ---
 
+# Your Turn
++ Find all the complaints in Brooklyn
++ After that, find complaints in your ZIP code
+
+---
+
 # Selecting Rows
 + For example 
 ```python
@@ -1037,14 +1043,6 @@ df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
 
 ---
 
-name:afternoon-break
-class:center,middle
-# 15 Min Break
-![img-center-80](https://imgs.xkcd.com/comics/here_to_help.png)
-Source: https://xkcd.com/1831/
-
----
-
 # Selecting Rows - Fuzzy Matching
 + To do a fuzzy matching, we need to chain another function
 ```python
@@ -1058,6 +1056,9 @@ df[df['Complaint Type'].str.contains('Noise')]
 --
 
 + We pass it the parameter we're looking for 'Noise'
+--
+
++ We could also use the function [`startswith()`](https://www.tutorialspoint.com/python/string_startswith.htm)
 ---
 
 # Try It Out
@@ -1079,6 +1080,263 @@ df[df['Complaint Type'].str.contains('Derelict Vehicle')]\
 	.groupby('Community Board')['Unique Key']\
 	.count().sort_values(ascending=False)
 ```
+
+---
+
+name:afternoon-break
+class:center,middle
+# 15 Min Break
+![img-center-80](https://imgs.xkcd.com/comics/here_to_help.png)
+Source: https://xkcd.com/1831/
+
+---
+
+# Final Exercise
+???
++ Facilitator prompts students to think of an interesting/engaging question
++ Students share them with the class and students are given the opportunity to pair up
++ Students can move around the classroom to work together in pairs or small groups
++ Facilitators and TA work with students to answer their questions with additional resources or skills as necessary, but learning should be student driven ("We've given you enough to be dangerous...")
+--
+
++ Take a moment and think about what you've looked at
+--
+
++ What questions are you interested in exploring?
+--
+
++ Take a moment to write them down in your workbook
+
+---
+
+name:final-exercise
+# Your Turn
+--
+
+![img-right-40](images/new_notebook.png)
++ Open a new Jupyter Notebook
+--
+
++ Load the data and begin exploring your question
+--
+
++ Try to find a story in the data (if you can)
+--
+
++ But mostly just have fun
+--
+
++ We're here to help
+--
+
++ Here's [a list of functions](#pandas-reference)
+
+---
+
+exclude:true
+# old exercise
++ filter for a different complaint type
++ Find the borough, ZIP code, or community board with the most complaints
++ Try grouping by another column (Location Type or Agency)
+
+---
+
+# Debugging
+--
+
++ Everyone makes mistakes
+--
+
++ It's just a matter of how serious they are<br>
+--
+_And fixing them_
+--
+
++ **Semantic errors** -> doing the wrong things
+--
+
++ **Syntax errors** -> using the wrong instructions
+--
+
++ When in doubt, review the documentation
+
+???
++ Students will be introduced to key concepts in identifying and resolving errors
++ This will be done with a lecture/discussion leading into an exercise
++ Class exercise finding errors in code -> slide with code snippets in Markdown with errors
++ deal with issue of correctness
+
+---
+
+# Exercise
+
++ Debug your neighbor's Python code and verify results
+
+???
++ Students will examine another student's code, run the code, and fix any errors
++ Students will have a better understanding of how to think in code
++ Goal is to get students talking to each other about their code
++ have documentation at end of slides
+
+---
+
+class:center,middle
+# <a href="https://script.google.com/a/macros/datapolitan.com/s/AKfycbwMcE5pcJwZHdbSCN_2epwaXnRLSRPaLbHCAhxaZJ79UXaRpQ_l/exec" target="_blank">Click to submit your work</a>
+
+---
+
+class:middle,center
+# Code Review
+
+???
++ Students will review select code examples
++ Goal is to model a collaborative process for data analysis
++ Time buffer for end of class
+
+---
+
+name:pandas-reference
+# Key `pandas` Functions (Back to [exercise](#final-exercise))
++ [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
++ [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of DataFrame
++ [`count()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.count.html) - count of all rows in column
++ [`max()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.max.html) & [`min()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.min.html) - max and min values in column
++ [`mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) & [`median()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.median.html) - mean and median values of numbers in column
++ [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for DataFrame
++ [`hist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) - create a histogram of values
++ [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in DataFrame
++ [`sort_values()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html) - sort by values
+
+
+---
+
+class:center,middle
+# WRAP-UP
+
+---
+
+# What We've Covered
+--
+
++ Basic Python syntax
+--
+
++ Working in Jupyter
+--
+
++ Opening a dataset
+--
+
++ Exploring a dataset
+--
+
++ Visualizing a dataset
+--
+
++ What else?
+
+---
+
+# What We Haven't Covered
+--
+
++ All the data structures in Python
+--
+
++ Deep dive into algorithms
+--
+
++ More Packages&nbsp;
+--
+and there are [a lot of packages](https://pypi.python.org/pypi/?)&nbsp;
+--
+even [ones for working with spatial data](http://geopandas.org/)
+--
+
++ How to be [Pythonic](http://stackoverflow.com/questions/25011078/what-does-pythonic-mean)
+--
+
++ How to use APIs
+--
+
++ So much more...
+
+---
+
+# Remember
+--
+
++ Python is a powerful tool for cleaning, analyzing, and visualizing data
+--
+
++ Integrating it into your workflow takes practice and a commitment to not giving up (Google is your friend)
+--
+
++ Distributions like [Anaconda](https://www.continuum.io/downloads) make it easy to get started (and you should be able to install it on your work computer)
+--
+
++ It's best if you just start off with Python 3 (what we've been using)
+--
+
++ For more on the difference, [check this out](https://www.digitalocean.com/community/tutorials/python-2-vs-python-3-practical-considerations-2)
+
+---
+
+# To Learn More
+--
+
++ [Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do) - The textbook on using `pandas` for data analysis
+--
+
++ [Beginner's Python Tutorial](https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial) - A good way to get started with basic tasks
+--
+
++ [Top 20 Python Libraries for Data Science in 2018](https://www.datasciencecentral.com/profiles/blogs/top-20-python-libraries-for-data-science-in-2018)
+--
+
++ [An A-Z of Useful Python Tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747) - Helpful tidbits to make things easier (and more fun, like printing emojis in Python)
+--
+
++ [23 great pandas codes for Data Scientists](https://towardsdatascience.com/23-great-pandas-codes-for-data-scientists-cca5ed9d8a38) - Common tasks in `pandas` with code samples
+
+---
+
+# Other Resources
+--
+
++ [Stack Overflow](http://stackoverflow.com/) - One of the best Q&A sites for technical questions of all kinds
+--
+
++ [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) - How to be "Pythonic"
+--
+
++ [Class handout](workbook.pdf)
+--
+
++ [Datapolitan Training Classes](http://training.datapolitan.com)
+
+---
+
+# Contact Information
+## Richard Dunks
++ Email: richard[at]datapolitan[dot]com
++ Website: http://www.datapolitan.com
++ Twitter: [@datapolitan](https://twitter.com/datapolitan)
+
+## Alfred Lee
++ Website: https://blog.justalfred.com/
++ Twitter: [@Alphrabet](https://twitter.com/Alphrabet)
+
+<!-- ## Julia Marden
++ Email: julia[at]tinypanther[dot]com
++ Website: http://tinypanther.com
++ Twitter: [@juliaem](https://twitter.com/juliaem) -->
+
+
+---
+
+class:center, middle
+# THANK YOU!
 
 ---
 
@@ -1323,218 +1581,6 @@ exclude:true
 ![img-center-70](images/add_algo7.png)
 
 
----
-
-name:final-exercise
-# Your Turn
-
-![img-right-40](images/new_notebook.png)
-+ Open a new Jupyter Notebook
-+ Load the data and filter for a different complaint type
-+ Find the borough, ZIP code, or community board with the most complaints
-+ Try grouping by another column (Location Type or Agency)
-+ Try to find a story in the data (if you can)
-+ Have fun
-+ Here's [a list of functions](#pandas-reference)
-
----
-
-# Debugging
---
-
-+ Everyone makes mistakes
---
-
-+ It's just a matter of how serious they are<br>
---
-_And fixing them_
---
-
-+ **Semantic errors** -> doing the wrong things
---
-
-+ **Syntax errors** -> using the wrong instructions
---
-
-+ When in doubt, review the documentation
-
-???
-+ Students will be introduced to key concepts in identifying and resolving errors
-+ This will be done with a lecture/discussion leading into an exercise
-+ Class exercise finding errors in code -> slide with code snippets in Markdown with errors
-+ deal with issue of correctness
-
----
-
-# Exercise
-
-+ Debug your neighbor's Python code and verify results
-
-???
-+ Students will examine another student's code, run the code, and fix any errors
-+ Students will have a better understanding of how to think in code
-+ Goal is to get students talking to each other about their code
-+ have documentation at end of slides
-
----
-
-class:center,middle
-# <a href="https://script.google.com/a/macros/datapolitan.com/s/AKfycbwMcE5pcJwZHdbSCN_2epwaXnRLSRPaLbHCAhxaZJ79UXaRpQ_l/exec" target="_blank">Click to submit your work</a>
-
----
-
-class:middle,center
-# Code Review
-
-???
-+ Students will review select code examples
-+ Goal is to model a collaborative process for data analysis
-+ Time buffer for end of class
-
----
-
-name:pandas-reference
-# Key `pandas` Functions (Back to [exercise](#final-exercise))
-+ [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
-+ [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of DataFrame
-+ [`count()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.count.html) - count of all rows in column
-+ [`max()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.max.html) & [`min()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.min.html) - max and min values in column
-+ [`mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) & [`median()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.median.html) - mean and median values of numbers in column
-+ [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for DataFrame
-+ [`hist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) - create a histogram of values
-+ [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in DataFrame
-+ [`sort_values()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html) - sort by values
-
-
----
-
-class:center,middle
-# WRAP-UP
-
----
-
-# What We've Covered
---
-
-+ Basic Python syntax
---
-
-+ Working in Jupyter
---
-
-+ Opening a dataset
---
-
-+ Exploring a dataset
---
-
-+ Visualizing a dataset
---
-
-+ What else?
-
----
-
-# What We Haven't Covered
---
-
-+ All the data structures in Python
---
-
-+ Deep dive into algorithms
---
-
-+ More Packages&nbsp;
---
-and there are [a lot of packages](https://pypi.python.org/pypi/?)&nbsp;
---
-even [ones for working with spatial data](http://geopandas.org/)
---
-
-+ How to be [Pythonic](http://stackoverflow.com/questions/25011078/what-does-pythonic-mean)
---
-
-+ How to use APIs
---
-
-+ So much more...
-
----
-
-# Remember
---
-
-+ Python is a powerful tool for cleaning, analyzing, and visualizing data
---
-
-+ Integrating it into your workflow takes practice and a commitment to not giving up (Google is your friend)
---
-
-+ Distributions like [Anaconda](https://www.continuum.io/downloads) make it easy to get started (and you should be able to install it on your work computer)
---
-
-+ It's best if you just start off with Python 3 (what we've been using)
---
-
-+ For more on the difference, [check this out](https://www.digitalocean.com/community/tutorials/python-2-vs-python-3-practical-considerations-2)
-
----
-
-# To Learn More
---
-
-+ [Python for Data Analysis](http://shop.oreilly.com/product/0636920050896.do) - The textbook on using `pandas` for data analysis
---
-
-+ [Beginner's Python Tutorial](https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial) - A good way to get started with basic tasks
---
-
-+ [Top 20 Python Libraries for Data Science in 2018](https://www.datasciencecentral.com/profiles/blogs/top-20-python-libraries-for-data-science-in-2018)
---
-
-+ [An A-Z of Useful Python Tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747) - Helpful tidbits to make things easier (and more fun, like printing emojis in Python)
---
-
-+ [23 great pandas codes for Data Scientists](https://towardsdatascience.com/23-great-pandas-codes-for-data-scientists-cca5ed9d8a38) - Common tasks in `pandas` with code samples
-
----
-
-# Other Resources
---
-
-+ [Stack Overflow](http://stackoverflow.com/) - One of the best Q&A sites for technical questions of all kinds
---
-
-+ [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) - How to be "Pythonic"
---
-
-+ [Class handout](workbook.pdf)
---
-
-+ [Datapolitan Training Classes](http://training.datapolitan.com)
-
----
-
-# Contact Information
-## Richard Dunks
-+ Email: richard[at]datapolitan[dot]com
-+ Website: http://www.datapolitan.com
-+ Twitter: [@datapolitan](https://twitter.com/datapolitan)
-
-## Alfred Lee
-+ Website: https://blog.justalfred.com/
-+ Twitter: [@Alphrabet](https://twitter.com/Alphrabet)
-
-<!-- ## Julia Marden
-+ Email: julia[at]tinypanther[dot]com
-+ Website: http://tinypanther.com
-+ Twitter: [@juliaem](https://twitter.com/juliaem) -->
-
-
----
-
-class:center, middle
-# THANK YOU!
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
