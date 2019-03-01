@@ -14,18 +14,18 @@
 + Analysts working in city government with basic programming knowledge and/or experience performing advanced analysis in Excel (nested formulas with conditionals, PivotTables, and macros)
 
 # Outline
-+ Introduction (Richard)
-  + Class Schedule and Expectations (Richard)
-  + Housekeeping (Richard)
-  + What is Python? (Julia)
-  + Value of Data (Julia)
-  + What is Analysis? (Julia)
-  + What is Python? (Julia)
-  + Python vs Excel (Julia)
-+ Today's Question (Julia)
-+ Getting Started (Richard)
-  + Using Jupyter Notebook (Richard)
-  + Python Syntax (Richard)
++ Introduction
+  + Class Schedule and Expectations
+  + Housekeeping
+  + What is Python?
+  + Value of Data
+  + What is Analysis?
+  + What is Python?
+  + Python vs Excel
++ Today's Question
++ Getting Started
+  + Using Jupyter Notebook
+  + Python Syntax
 + Data Collection
   + Open 311 Dataset in Python
   + Explore Data Structures and Types
