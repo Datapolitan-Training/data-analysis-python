@@ -1043,10 +1043,7 @@ df[df['Column Name'] == 'Value']
 + `df['Column Name'] == 'Value'` is the test we use to filter on
 --
 
-+ `==` means "equivalent to" 
---
-
-+ `=` is for assigning value
++ `==` means "equivalent to" while `=` is for assigning value
 --
 
 + We can also assign this subset to another dataframe
@@ -1061,6 +1058,10 @@ df3 = df[df['Column Name'] == 'Value']
 df4 = df[(df['Column 1'] == 'Value 1') & (df['Column 2'] == 'Value 2')]
 ```
 
+--
+
++ Pandas has [other ways](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method)
+to filter if you're curious!
 ---
 
 # Your Turn
