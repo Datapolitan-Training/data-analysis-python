@@ -917,12 +917,12 @@ class:center,middle
 --
 
 ```python
-df.groupby('Column you want to group')['Column you want to count'].count()
+df.groupby(['Column you want to group'])['Column you want to count'].count()
 ```
 --
 + In this case
 ```python
-df.groupby('Borough')['Unique Key'].count()
+df.groupby(['Borough'])['Unique Key'].count()
 ```
 --
 ![img-center-50](images/borough_count_table.png)
@@ -932,7 +932,7 @@ df.groupby('Borough')['Unique Key'].count()
 # Aggregating Data
 + To sort the list
 ```python
-df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
 --
 
@@ -957,14 +957,14 @@ df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
 
 + Example:
 ```python
-df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
 
 ---
 
 # Function Chaining
 ```python
-df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
+df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
 --
 
@@ -993,7 +993,7 @@ df.groupby('Borough')['Unique Key'].count().sort_values(ascending=False)
 # Plotting Service Requests by Borough
 
 ```python
-df.groupby('Borough')['Unique Key']\
+df.groupby(['Borough'])['Unique Key']\
 	.count()\
 	.sort_values(ascending=False)\
 	.plot(kind='bar',ylim=(0,75000),\
@@ -1120,13 +1120,13 @@ df[df['Complaint Type'].str.contains('Noise')]
 + Students should find that Queens has the most (2387)
 ```python
 df[df['Complaint Type'].str.contains('Derelict Vehicle')]\
-	.groupby('Borough')['Unique Key']\
+	.groupby(['Borough'])['Unique Key']\
 	.count()
 ```
 + Students should find that 12 Queens has the most (447)
 ```python
 df[df['Complaint Type'].str.contains('Derelict Vehicle')]\
-	.groupby('Community Board')['Unique Key']\
+	.groupby(['Community Board'])['Unique Key']\
 	.count().sort_values(ascending=False)
 ```
 
