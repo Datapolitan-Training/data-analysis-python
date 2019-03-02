@@ -1035,7 +1035,7 @@ df2 = df[['column1','column2','column3']]
 
 ---
 
-# Selecting Rows
+# Selecting Rows (Filtering)
 ```python
 df[df['Column Name'] == 'Value']
 ```
@@ -1052,6 +1052,13 @@ df[df['Column Name'] == 'Value']
 + We can also assign this subset to another dataframe
 ```python
 df3 = df[df['Column Name'] == 'Value']
+```
+
+--
+
++ And we can filter on multiple columns
+```python
+df4 = df[(df['Column 1'] == 'Value 1') & (df['Column 2'] == 'Value 2')]
 ```
 
 ---
