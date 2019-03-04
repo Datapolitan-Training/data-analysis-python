@@ -996,7 +996,6 @@ df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ---
 
 # Plotting Service Requests by Borough
-
 ```python
 df.groupby(['Borough'])['Unique Key']\
 	.count()\
@@ -1006,6 +1005,23 @@ df.groupby(['Borough'])['Unique Key']\
 ```
 ## The `\` mark just lets me break the code lines so it'll fit
 
+???
++ Specify bar colors with the `color` kwarg of `.plot()`
++ An example using a different format for each of the six bars:
+
+```python
+color=['r',  # short for 'red'
+       'chartreuse',  # named color
+       '#FFFF00',  # hex RGB
+       '0.75',  # grayscale
+       (0.8, 0, 0.8),  # tuple RGB
+       (0, 0, 1, 0.5)]  # tuple RGBA
+```
++ Note that if this question does come up, start with the simplest options:
+```python
+color='blue'  # all one color
+color=['red', 'green', 'purple', 'orange', 'brown', 'yellow']
+```
 ---
 
 class:center,middle
