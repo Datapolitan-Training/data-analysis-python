@@ -1166,6 +1166,10 @@ Source: https://xkcd.com/1831/
 name:final-exercise
 # Your Turn
 ???
++ common Q: top five complaint types?
+```
+df.groupby(['Complaint Type']).count()['Unique Key'].sort_values(ascending=False).head()
+```
 + common Q: how to get hour of the day?
 ```
 col = pd.to_datetime(df['Closed Date'])
