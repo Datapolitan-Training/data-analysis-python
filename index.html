@@ -195,7 +195,7 @@ name:python-intro
 
 --
 
-+ [Open-source](https://opensource.com/resources/what-open-source) programming langage
++ [Open-source](https://opensource.com/resources/what-open-source) programming languge
 --
 
 + Can run in standalone scripts or [full applications](http://www.hartmannsoftware.com/Blog/Articles_from_Software_Fans/Most-Famous-Software-Programs-Written-in-Python)
@@ -327,6 +327,9 @@ exclude:true
 ---
 
 # Using Jupyter Notebook
+???
++ Even if you're fluent with keyboard shortcuts, don't use them.
+Model the interface elements the students should use.
 --
 
 ![img-right-45](images/notebook_run.png)
@@ -336,7 +339,7 @@ exclude:true
 + You can also press `Shift` + `Enter` to run a block
 --
 ![img-right-40](images/notebook_output.png)
-+ The output (if any) will print below
++ Any output will print below
 --
 
 + You can type as much or as little code as you'd like
@@ -351,40 +354,12 @@ exclude:true
 + Great for experimenting, prototyping, or simple scripts
 
 ---
-name:other-tips
-# Other Tips
-???
-+ Even if you're fluent with keyboard shortcuts, don't use them.
-Model the interface elements the students should use.
---
-
-![img-right-45](images/notebook_ribbon.png)
-
-+ Rename the notebook from "Untitled" to anything
---
-
-+ Add new cells with the "+"
---
-
-+ Cut cells with the scissors
---
-
-+ Rearrange cells with the up and down arrows
---
-
-+ If a cell looks weird or doesn't do anything, make sure that it's a "code" cell
---
-
-+ The circle in the upper right tells you if python is running
---
-
-+ Cells also get numbered after they run (e.g. `IN [1]`)
----
-
+name:notebook-exercise
 # Your Turn
 + Change the code to print your name
 + Re-run to make sure it prints properly
 + Have fun -> you won't break anything
++ Here are [extra tips](#notebook-tips) to explore
 
 ???
 + Facilitator provides a confidence building exercise for students to become comfortable with the environment
@@ -413,14 +388,15 @@ Model the interface elements the students should use.
 
 + We create variables and assign a value using the `=` sign
 ```python
-a = 1 # assign the value 1 to the variable a ("a is 1")
-b = 2 # assign the value 2 to the variable c ("b is 2")
+apples = 1 # assign the value 1 to the variable `apples` ("apples is 1")
+pears = 2 # assign the value 2 to the variable `pears` ("pears" is 2")
 ```
 --
 + We can perform operations with mathematical operators
 ```python
-c = a + b # add the value of a and b, and assign to variable c 
-# ("c is a and b")
+# add the values of apples and pears, and assign to variable fruits
+# ("fruits is apples and pears")
+fruits = apples + pears
 ```
 
 ---
@@ -428,6 +404,7 @@ c = a + b # add the value of a and b, and assign to variable c
 # Your turn
 + Calculate the sum of `5` and `7`, assign the result to a variable and print the result
 + If you want to see an interactive example of what's going on, try [the Python Tutor](http://pythontutor.com/live.html#mode=edit)
++ Remember to use descriptive names for your variables!
 
 ---
 
@@ -584,6 +561,9 @@ import matplotlib.pyplot as plt # Imports the visualization package
 # This tells Jupyter to show images inside notebook cells (instead of in a separate window)
 ```
 --
++ (You can look up all the `%magic` commands
+[here](https://ipython.readthedocs.io/en/stable/interactive/magics.html?highlight=magic).)
+--
 ![img-right-40](images/faithful_chart.png)
 + Then we can create a simple histogram using the `hist()` function
 ```python
@@ -682,13 +662,13 @@ class:center,middle
 name:311_ex
 
 # 311 Data Exercise
++ Open the [`311_exercise.ipynb`](311_exercise.ipynb) file to follow along
 + Load the data from `https://s3.amazonaws.com/datapolitan-training-files/311_Requests_Oct15_Nov20.csv`
 + Don't add the `index_col=0` that we had before
 + Ignore the warning you get ([more on that warning](http://stackoverflow.com/a/27232309/1808021))
 ![img-center-90](images/error.png)
 + Inspect the data based on the techniques we just used
-+ You can use the [`311_exercise.ipynb`](311_exercise.ipynb) file as we
-+ The [data dictionary](https://data.cityofnewyork.us/api/views/erm2-nwe9/files/68b25fbb-9d30-486a-a571-7115f54911cd?download=true&filename=311_SR_Data_Dictionary_2018.xlsx)
++ This [data dictionary](https://data.cityofnewyork.us/api/views/erm2-nwe9/files/68b25fbb-9d30-486a-a571-7115f54911cd?download=true&filename=311_SR_Data_Dictionary_2018.xlsx)
 explains each column
 
 ---
@@ -993,7 +973,6 @@ df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ---
 
 # Plotting Service Requests by Borough
-
 ```python
 df.groupby(['Borough'])['Unique Key']\
 	.count()\
@@ -1002,6 +981,42 @@ df.groupby(['Borough'])['Unique Key']\
 	title='Count of NYC 311 Service Requests by Borough')
 ```
 ## The `\` mark just lets me break the code lines so it'll fit
+
+???
++ Specify bar colors with the `color` kwarg of `.plot()`
++ An example using a different format for each of the six bars:
+
+```python
+color=['r',  # short for 'red'
+       'chartreuse',  # named color
+       '#FFFF00',  # hex RGB
+       '0.75',  # grayscale
+       (0.8, 0, 0.8),  # tuple RGB
+       (0, 0, 1, 0.5)]  # tuple RGBA
+```
++ Note that if this question does come up, start with the simplest options:
+```python
+color='blue'  # all one color
+color=['red', 'green', 'purple', 'orange', 'brown', 'yellow']
+```
+---
+
+# Function Chaining vs. Storing Intermediate Results
+--
+
++ Is there a difference? When should you use one or the other?
+--
+
++ Function Chaining is compact and saves memory, but hides the steps in between
+--
+
++ Storing intermediate results can make clutter, but it's easier to debug
+--
+
++ Our recommendation: Use both!
+--
+
++ Chain functions up to the important points that you want to inspect or reuse
 
 ---
 
@@ -1162,6 +1177,16 @@ Source: https://xkcd.com/1831/
 
 name:final-exercise
 # Your Turn
+???
++ common Q: top five complaint types?
+```
+df.groupby(['Complaint Type']).count()['Unique Key'].sort_values(ascending=False).head()
+```
++ common Q: how to get hour of the day?
+```
+col = pd.to_datetime(df['Closed Date'])
+col.dt.hour
+```
 --
 
 ![img-right-40](images/new_notebook.png)
@@ -1243,6 +1268,18 @@ class:middle,center
 + Students will review select code examples
 + Goal is to model a collaborative process for data analysis
 + Time buffer for end of class
+
+---
+name:notebook-tips
+# Jupyter Notebook Tips (Back to [exercise](#notebook-exercise))
+![img-right-45](images/notebook_ribbon.png)
++ Click on "Untitled" to rename the notebook
++ Add new cells with the "+"
++ Cut cells with the scissors
++ Rearrange cells with the up and down arrows
++ If a cell looks weird or doesn't do anything, make sure that it's a "code" cell
++ The circle in the upper right tells you if python is running
++ Cells also get numbered after they run (e.g. `IN [1]`)
 
 ---
 
@@ -1358,6 +1395,9 @@ even [ones for working with spatial data](http://geopandas.org/)
 ---
 
 # Other Resources
+--
+
++ [Jupyter Quick Start Guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/) - To get started at home
 --
 
 + [Stack Overflow](http://stackoverflow.com/) - One of the best Q&A sites for technical questions of all kinds
