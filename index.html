@@ -525,11 +525,14 @@ df.mean() # Find the mean value of all non-null columns
 ```python
 df.median() # Find the median value
 ```
---
+---
+
+# Analyzing the Data
 + Or do it all together
 ```python
 df.describe() # Provide summary statistics for all columns
 ```
+
 ---
 
 # Referencing Columns
@@ -1069,15 +1072,13 @@ df[df['Column Name'] == 'Value']
 df3 = df[df['Column Name'] == 'Value']
 ```
 
---
-
+---
+# Selecting Rows (Filtering)
 + And we can filter on multiple columns
 ```python
 df4 = df[(df['Column 1'] == 'Value 1') & (df['Column 2'] == 'Value 2')]
 ```
-
 --
-
 + Pandas has [other ways](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method)
 to filter if you're curious!
 ---
@@ -1285,19 +1286,22 @@ name:notebook-tips
 ---
 
 name:pandas-reference
-# Key `pandas` Functions (Back to [exercise](#final-exercise))
+# Key `pandas` Functions (1/2) (Back to [exercise](#final-exercise))
 + [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
 + [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of DataFrame
 + [`count()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.count.html) - count of all rows in column
 + [`max()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.max.html) & [`min()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.min.html) - max and min values in column
 + [`mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) & [`median()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.median.html) - mean and median values of numbers in column
+
+---
+
+# Key `pandas` Functions (2/2) (Back to [exercise](#final-exercise))
 + [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for DataFrame
 + [`hist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) - create a histogram of values
 + [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in DataFrame
 + [`sort_values()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html) - sort by values
 + [`unique()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html) - get unique values in a column
 + [`nunique()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.nunique.html) - get number of unique values in a column
-
 
 ---
 
