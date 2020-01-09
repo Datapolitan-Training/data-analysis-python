@@ -544,10 +544,16 @@ df.describe() # Provide summary statistics for all columns
 df['Column Name'] # Example of the syntax for referencing a single column
 ```
 --
-+ We can then call functions on just that column
++ For example, we can get the eruptions column:
+--
+ 
+```python
+df['eruptions']
+```
+--
++ We can then call functions on just that column, such as `mean()`:
 --
 
-+ For example, to just get the mean for `eruptions`
 ```python
 df['eruptions'].mean() # Calculate the mean of the eruptions column
 ```
@@ -695,6 +701,9 @@ explains each column
 --
 
 + Work together and help each other out
+--
+
++ **Stop** when you get to "Which borough has the most complaints?"&mdash;we haven't covered that yet!
 
 ---
 
@@ -871,7 +880,6 @@ class:center,middle
 + What is the time range of the data?
 + What is the result of running `describe()`?
 + Try creating a histogram
-+ Work together and help each other out
 
 ---
 
@@ -940,7 +948,7 @@ name:function-chain
 + Python executes these from left to right (like we read)
 --
 
-+ Example:
++ As we just saw:
 ```python
 df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
@@ -983,7 +991,7 @@ df.groupby(['Borough'])['Unique Key']\
 	.plot(kind='bar',ylim=(0,75000),\
 	title='Count of NYC 311 Service Requests by Borough')
 ```
-## The `\` mark just lets me break the code lines so it'll fit
+## The `\` mark just lets us break the code onto multiple lines so it'll fit
 
 ???
 + Specify bar colors with the `color` kwarg of `.plot()`
@@ -1116,7 +1124,7 @@ df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
 df[df['Complaint Type'].str.contains('Noise')]
 ```
 --
-+ `str` contains a set of useful [string-related functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)
++ `str` contains a set of useful [string-related functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#method-summary)
 --
 
 + It has a function called `contains()` that will do a fuzzy match
@@ -1340,7 +1348,7 @@ class:center,middle
 + Deep dive into algorithms
 --
 
-+ More Packages&nbsp;
++ More packages&nbsp;
 --
 and there are [a lot of packages](https://pypi.python.org/pypi/?)&nbsp;
 --
