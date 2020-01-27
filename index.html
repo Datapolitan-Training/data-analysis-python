@@ -32,7 +32,6 @@ class:center, middle
 - - -
 
 ## Instructors: Eric Brelsford and Mark Yarish
-## Teaching Assistant: Imran Khan
 ### Follow along at: http://bit.ly/data-analysis-python<br>See the code at: http://bit.ly/data-analysis-python-code
 ![img-center-50](images/datapolitan.png)
 
@@ -334,10 +333,10 @@ Model the interface elements the students should use.
 --
 
 ![img-right-45](images/notebook_run.png)
-+ Type code into a block and run the block
++ Type code into a cell and run the cell
 --
 
-+ You can also press `Shift` + `Enter` to run a block
++ You can also press `Shift` + `Enter` to run a cell
 --
 ![img-right-40](images/notebook_output.png)
 + Any output will print below
@@ -346,7 +345,7 @@ Model the interface elements the students should use.
 + You can type as much or as little code as you'd like
 --
 
-+ You can re-run the block as many times as you'd like
++ You can re-run the cell as many times as you'd like
 --
 
 + Each webpage is a self-contained program (you can't share variables between webpages)
@@ -525,11 +524,14 @@ df.mean() # Find the mean value of all non-null columns
 ```python
 df.median() # Find the median value
 ```
---
+---
+
+# Analyzing the Data
 + Or do it all together
 ```python
 df.describe() # Provide summary statistics for all columns
 ```
+
 ---
 
 # Referencing Columns
@@ -542,10 +544,16 @@ df.describe() # Provide summary statistics for all columns
 df['Column Name'] # Example of the syntax for referencing a single column
 ```
 --
-+ We can then call functions on just that column
++ For example, we can get the eruptions column:
+--
+ 
+```python
+df['eruptions']
+```
+--
++ We can then call functions on just that column, such as `mean()`:
 --
 
-+ For example, to just get the mean for `eruptions`
 ```python
 df['eruptions'].mean() # Calculate the mean of the eruptions column
 ```
@@ -693,6 +701,9 @@ explains each column
 --
 
 + Work together and help each other out
+--
+
++ **Stop** when you get to "Which borough has the most complaints?"&mdash;we haven't covered that yet!
 
 ---
 
@@ -869,7 +880,6 @@ class:center,middle
 + What is the time range of the data?
 + What is the result of running `describe()`?
 + Try creating a histogram
-+ Work together and help each other out
 
 ---
 
@@ -938,7 +948,7 @@ name:function-chain
 + Python executes these from left to right (like we read)
 --
 
-+ Example:
++ As we just saw:
 ```python
 df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
@@ -981,7 +991,7 @@ df.groupby(['Borough'])['Unique Key']\
 	.plot(kind='bar',ylim=(0,75000),\
 	title='Count of NYC 311 Service Requests by Borough')
 ```
-## The `\` mark just lets me break the code lines so it'll fit
+## The `\` mark just lets us break the code onto multiple lines so it'll fit
 
 ???
 + Specify bar colors with the `color` kwarg of `.plot()`
@@ -1069,15 +1079,13 @@ df[df['Column Name'] == 'Value']
 df3 = df[df['Column Name'] == 'Value']
 ```
 
---
-
+---
+# Selecting Rows (Filtering)
 + And we can filter on multiple columns
 ```python
 df4 = df[(df['Column 1'] == 'Value 1') & (df['Column 2'] == 'Value 2')]
 ```
-
 --
-
 + Pandas has [other ways](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#the-query-method)
 to filter if you're curious!
 ---
@@ -1111,12 +1119,12 @@ df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
 ---
 
 # Selecting Rows - Fuzzy Matching
-+ To do a fuzzy matching, we need to chain another function
++ To do fuzzy matching, we need to chain another function
 ```python
 df[df['Complaint Type'].str.contains('Noise')]
 ```
 --
-+ `str` contains a set of useful [string-related functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)
++ `str` contains a set of useful [string-related functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#method-summary)
 --
 
 + It has a function called `contains()` that will do a fuzzy match
@@ -1246,8 +1254,18 @@ _And fixing them_
 ---
 
 # Exercise
+--
 
-+ Debug your neighbor's Python code and verify results
++ Switch seats with a neighbor
+--
+
++ Walk through your neighbor's Python code
+--
+
++ Do the steps make sense? Is it well documented?
+--
+
++ If there are issues with the code, try to debug it and verify results
 
 ???
 + Students will examine another student's code, run the code, and fix any errors
@@ -1285,19 +1303,22 @@ name:notebook-tips
 ---
 
 name:pandas-reference
-# Key `pandas` Functions (Back to [exercise](#final-exercise))
+# Key `pandas` Functions (1/2) (Back to [exercise](#final-exercise))
 + [`read_csv()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) - import file from CSV ([`read_excel()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_excel.html))
 + [`head()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) & [`tail()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.tail.html) - first and last 5 rows of DataFrame
 + [`count()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.count.html) - count of all rows in column
 + [`max()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.max.html) & [`min()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.min.html) - max and min values in column
 + [`mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html) & [`median()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.median.html) - mean and median values of numbers in column
+
+---
+
+# Key `pandas` Functions (2/2) (Back to [exercise](#final-exercise))
 + [`describe()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html) - summary statistics for DataFrame
 + [`hist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html) - create a histogram of values
 + [`groupby()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html) - group values together in DataFrame
 + [`sort_values()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html) - sort by values
 + [`unique()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.unique.html) - get unique values in a column
 + [`nunique()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.nunique.html) - get number of unique values in a column
-
 
 ---
 
@@ -1337,7 +1358,7 @@ class:center,middle
 + Deep dive into algorithms
 --
 
-+ More Packages&nbsp;
++ More packages&nbsp;
 --
 and there are [a lot of packages](https://pypi.python.org/pypi/?)&nbsp;
 --
@@ -1683,7 +1704,7 @@ exclude:true
 
 
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    <script src="https://remarkjs.com/downloads/remark-0.14.0.min.js">
     </script>
     <script>
       var slideshow = remark.create({
