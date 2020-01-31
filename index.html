@@ -583,7 +583,7 @@ df.hist() # Create a histogram
 # Visualizing the Data
 + We can create a simple scatter plot that shows the values plotted against each other
 ```python
-df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot 
+df.plot(kind='scatter', x='waiting', y='eruptions') # Create a scatter plot 
 ```
 ![img-center-60](images/faithful_scatter.png)
 
@@ -592,7 +592,7 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 # Breaking Down the Code
 
 ```python
-df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
+df.plot(kind='scatter', x='waiting', y='eruptions') # Create a scatter plot
 ```
 --
 
@@ -605,7 +605,7 @@ df.plot(kind='scatter',x='waiting',y='eruptions') # Create a scatter plot
 + We give Python three parameters telling it how to plot (adverbs that modify the verb)
 --
 
-+ "_Create a `scatter` plot with the parameters `x='waiting',y='eruptions'`_"
++ "_Create a `scatter` plot with the parameters `x='waiting', y='eruptions'`_"
 --
 
 + We'll experiment more with this later
@@ -964,7 +964,7 @@ df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 + We first run the `groupby()` function to aggregate the values
 --
 
-+ Then the results using the `count()` function
++ Then count the results using the `count()` function
 --
 
 + Then sort the result by values using the `sort_values()` function
@@ -1044,12 +1044,12 @@ df['column1']
 --
 + To select multiple columns, we do this:
 ```python
-df[['column1','column2','column3']]
+df[['column1', 'column2', 'column3']]
 ```
 --
 + We can assign this subset to another dataframe
 ```python
-df2 = df[['column1','column2','column3']]
+df2 = df[['column1', 'column2', 'column3']]
 ```
 --
 + Identify key columns and assign them to a new dataframe
@@ -1099,7 +1099,7 @@ to filter if you're curious!
 # Selecting Rows
 + For example 
 ```python
-df[df['Complaint Type']=='Noise']
+df[df['Complaint Type'] == 'Noise']
 ```
 --
 + This will filter for Complaint Type "Noise"
@@ -1107,7 +1107,7 @@ df[df['Complaint Type']=='Noise']
 
 + We can count these
 ```python
-df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
+df[df['Complaint Type'] == 'Noise']['Unique Key'].count() # 6523
 ```
 --
 ![img-right-40](images/noise_count_table_box.png)
