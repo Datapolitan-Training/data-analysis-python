@@ -567,7 +567,8 @@ df['eruptions'].mean() # Calculate the mean of the eruptions column
 ```python
 import matplotlib.pyplot as plt # Imports the visualization package
 %matplotlib inline 
-# This tells Jupyter to show images inside notebook cells (instead of in a separate window)
+# This tells Jupyter to show images inside notebook cells
+# instead of in a separate window
 ```
 --
 + (You can look up all the `%magic` commands
@@ -1044,7 +1045,7 @@ df['column1']
 --
 + To select multiple columns, we do this:
 ```python
-df[['column1','column2','column3']]
+df[['column1','column2','column3']] # select columns 1, 2, and 3
 ```
 --
 + We can assign this subset to another dataframe
@@ -1065,10 +1066,10 @@ df2 = df[['column1','column2','column3']]
 
 # Selecting Rows (Filtering)
 ```python
-df[df['Column Name'] == 'Value']
+df[df['Column'] == 'Value'] # filter rows for "Value" in specified "Column"
 ```
 --
-+ `df['Column Name'] == 'Value'` is the test we use to filter on
++ `df['Column'] == 'Value'` is the test we use to filter on
 --
 
 + `==` means "equivalent to" while `=` is for assigning value
@@ -1076,7 +1077,7 @@ df[df['Column Name'] == 'Value']
 
 + We can also assign this subset to another dataframe
 ```python
-df3 = df[df['Column Name'] == 'Value']
+df3 = df[df['Column'] == 'Value']
 ```
 
 ---
@@ -1121,7 +1122,7 @@ df[df['Complaint Type']=='Noise']['Unique Key'].count() # 6523
 # Selecting Rows - Fuzzy Matching
 + To do fuzzy matching, we need to chain another function
 ```python
-df[df['Complaint Type'].str.contains('Noise')]
+df[df['Complaint Type'].str.contains('Noise')] # fuzzy match on "Noise"
 ```
 --
 + `str` contains a set of useful [string-related functions](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#method-summary)
@@ -1710,7 +1711,7 @@ exclude:true
       var slideshow = remark.create({
               // {
               //   slideNumberFormat: ""}
-              countIncrementalSlides: false
+              // countIncrementalSlides: false
           }
         );
     </script>
