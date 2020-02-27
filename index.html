@@ -1003,12 +1003,9 @@ class:center,middle
 
 ---
 
-class:center,middle
-# Let's Get Back to the Data
-
----
-
 # Going Deeper into the Data
+
+--
 + Which borough has the most complaints?
 
 --
@@ -1026,54 +1023,142 @@ class:center,middle
 ---
 
 # Aggregating Data
---
 
+--
++ One of our data analytics tasks
+
+--
 + What is a PivotTable in Excel and when do you use it?
---
 
+--
 + `groupby` is the same for making summaries
+
+---
+
+# Aggregating Data
+
 --
 
++ Use `groupby` like this:
 ```python
-df.groupby(['Column you want to group'])['Column you want to count'].count()
+df.groupby(['Column you want to group by'])
 ```
 --
 + In this case
 ```python
-df.groupby(['Borough'])['Unique Key'].count()
+df.groupby(['Borough'])
 ```
 --
++ This makes a new, grouped, DataFrame. Let's put this in a variable:
+
+--
+```python
+df_by_borough = df.groupby(['Borough'])
+```
+
+---
+
+# Aggregating Data
+
+--
++ Then we can count the rows within each group
+
+--
++ Select the column to count:
+
+--
+```python
+df_by_borough['Unique Key']
+```
+--
++ And call `count()` like usual:
+
+--
+```python
+df_by_borough['Unique Key'].count()
+```
+--
+
 ![img-center-50](images/borough_count_table.png)
 
 ---
 
 # Aggregating Data
-+ To sort the list
+
+--
++ Let's put that in its own variable:
+
+--
 ```python
-df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
+df_by_borough_count = df_by_borough['Unique Key'].count()
 ```
 --
++ How would we sort this?
 
+--
+```python
+df_by_borough_count.sort_values(ascending=False)
+```
+--
 ![img-center-50](images/borough_count_table_sorted.png)
+
+---
+
+# Aggregating Data
+
+--
++ We can put the counted and sorted data in its own variable too:
+
+--
+```python
+df_sorted_by_borough_count = df_by_borough_count.sort_values(ascending=False)
+```
+--
++ What if we want to plot the result?
 --
 
-+ This is called **function chaining**
++ We just add a `.plot()`:
+--
+
+```python
+df_sorted_by_borough_count.plot(kind='bar')
+```
+--
++ Try it!
+
+---
+
+# Aggregating Data
+
+```python
+# Group by borough
+df_by_borough = df.groupby(['Borough'])
+
+# Count rows by group
+df_by_borough_count = df_by_borough['Unique Key'].count()
+
+# Sort by count
+df_sorted_by_borough_count = df_by_borough_count.sort_values(ascending=False)
+
+# Make a bar chart
+df_sorted_by_borough_count.plot(kind='bar')
+```
 
 ---
 name:function-chain
 # Function Chaining
 --
 
-+ We can string operations together using the [dot method](http://reeborg.ca/docs/oop_py_en/oop.html)
++ An alternative to making variables
 --
 
-+ This means we can chain operations using a simple dot between operations
++ We can connect operations using a dot between functions
 --
 
 + Python executes these from left to right (like we read)
 --
 
-+ As we just saw:
++ We can group, count, then sort all in one line:
 ```python
 df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 ```
@@ -1093,30 +1178,19 @@ df.groupby(['Borough'])['Unique Key'].count().sort_values(ascending=False)
 --
 
 + Then sort the result by values using the `sort_values()` function
---
-
-+ What if we want to plot the result?
---
-
-+ We just add a `.plot()` (with some parameters)
---
-
-+ Try it yourself
-
-<!-- + This is a paradigm called [object-oriented programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
-+ You don't need to fully understand this to program in Python&nbsp;but it helps -->
 
 ---
 
 # Plotting Service Requests by Borough
+
++ Using function chaining:
 ```python
-df.groupby(['Borough'])['Unique Key']\
-	.count()\
-	.sort_values(ascending=False)\
-	.plot(kind='bar',ylim=(0,75000),\
-	title='Count of NYC 311 Service Requests by Borough')
+df.groupby(['Borough'])['Unique Key'].count()\
+		.sort_values(ascending=False)\
+		.plot(kind='bar')
 ```
-## The `\` mark just lets us break the code onto multiple lines so it'll fit
+--
++ (The `\` mark allows us to break the code onto multiple lines)
 
 ???
 + Specify bar colors with the `color` kwarg of `.plot()`
