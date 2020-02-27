@@ -1347,14 +1347,11 @@ to filter if you're curious!
 ---
 
 # Selecting Rows
-+ For example 
++ Filtering the 311 data for noise complaints:
 ```python
 df[df['Complaint Type'] == 'Noise']
 ```
 --
-+ This will filter for Complaint Type "Noise"
---
-
 + We can count these
 ```python
 df[df['Complaint Type'] == 'Noise']['Unique Key'].count() # 6523
@@ -1369,7 +1366,7 @@ df[df['Complaint Type'] == 'Noise']['Unique Key'].count() # 6523
 ---
 
 # Selecting Rows - Fuzzy Matching
-+ To do fuzzy matching, we need to chain another function
++ To do fuzzy matching, we need to use a function
 ```python
 df[df['Complaint Type'].str.contains('Noise')] # fuzzy match on "Noise"
 ```
@@ -1380,7 +1377,7 @@ df[df['Complaint Type'].str.contains('Noise')] # fuzzy match on "Noise"
 + It has a function called `contains()` that will do a fuzzy match
 --
 
-+ We pass it the parameter we're looking for 'Noise'
++ We pass it the string we're looking for ('Noise')
 --
 
 + We could also use the function [`startswith()`](https://www.tutorialspoint.com/python/string_startswith.htm)
