@@ -749,69 +749,33 @@ class:center,middle
 
 ---
 
-# Today's Analysis
-
-![img-center-90](images/derelictvan.png)
-
-.center[Derelict Vehicles Across NYC]
-???
-+ Facilitator provides frame for class -> anecdotal to the global, is this a real problem? "Let's go to the data..."
-
---
-
-.center[But we're going to do some practice first]
---
-
-+ What borough generates the most complaints?
---
-
-+ What department gets the most complaints?
---
-
-+ What does this look like?
+class:center, middle
+# Let's load another dataset
 
 ---
 
-class:center,middle
-# Just Some Quick Points
+# 311 Data
 
----
-
-# Data Structures
 --
++ Open the [`311_exercise.ipynb`](311_exercise.ipynb) notebook to follow along
 
-+ Remember the `df` object?
 --
++ This notebook loads the 311 data from `https://s3.amazonaws.com/datapolitan-training-files/311_Requests_Oct15_Nov20.csv`
 
-+ It's called a [DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe) 
 --
-
-+ It's a basic data structure that stores our data
---
-
-+ Data structures are a way of organizing data in a computer program
---
-
-+ The method of organizing data differs across types, allowing for different applications
---
-
-+ Python has [lots of different data structures](http://interactivepython.org/runestone/static/pythonds/index.html) that we aren't going to talk about
-
-???
-+ Briefly introduce the concept of data structures
-+ Demystify the idea for further study
-
----
-
-name:311_ex
-
-# 311 Data Exercise
-+ Open the [`311_exercise.ipynb`](311_exercise.ipynb) file to follow along
-+ Load the data from `https://s3.amazonaws.com/datapolitan-training-files/311_Requests_Oct15_Nov20.csv`
-+ Don't add the `index_col=0` that we had before
 + Ignore the warning you get ([more on that warning](http://stackoverflow.com/a/27232309/1808021))
+
+--
 ![img-center-90](images/error.png)
-+ Inspect the data based on the techniques we just used
+
+---
+
+# 311 Data
+
+--
++ In a moment you will inspect the data based on the techniques we used with the Old Faithful dataset
+
+--
 + This [data dictionary](https://data.cityofnewyork.us/api/views/erm2-nwe9/files/68b25fbb-9d30-486a-a571-7115f54911cd?download=true&filename=311_SR_Data_Dictionary_2018.xlsx)
 explains each column
 
@@ -842,21 +806,29 @@ explains each column
 
 ---
 
-class:center, middle
-# Wrap-Up
+# Data Structures
+--
 
----
++ Remember the `df` object?
+--
 
-name:lunch
-class:center,middle
-# Lunch
-![img-center-60](images/xkcd_automation.png)
-Source: https://xkcd.com/1319/
++ It's called a [DataFrame](http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe) 
+--
 
----
++ It's a basic data structure that stores our data
+--
 
-class:center,middle
-# Welcome Back
++ Data structures are a way of organizing data in a computer program
+--
+
++ The method of organizing data differs across types, allowing for different applications
+--
+
++ Python has [lots of different data structures](http://interactivepython.org/runestone/static/pythonds/index.html) that we aren't going to talk about
+
+???
++ Briefly introduce the concept of data structures
++ Demystify the idea for further study
 
 ---
 
@@ -937,17 +909,50 @@ class:center,middle
 
 ---
 
-class:center,middle
-# Let's Get Back to the Data
+# Today's Analysis
+
+![img-center-90](images/derelictvan.png)
+
+.center[Derelict Vehicles Across NYC]
+???
++ Facilitator provides frame for class -> anecdotal to the global, is this a real problem? "Let's go to the data..."
+
+--
+
+.center[But we're going to do some practice first]
+--
+
++ What borough generates the most complaints?
+--
+
++ What department gets the most complaints?
+--
+
++ What does this look like?
 
 ---
 
-# Summary Statistics on 311 Data
-+ How many columns are in the data?
-+ How many rows are in the data?
-+ What is the time range of the data?
-+ What is the result of running `describe()`?
-+ Try creating a histogram
+class:center, middle
+# Wrap-Up
+## Tell us one thing you learned since the break
+
+---
+
+name:lunch
+class:center,middle
+# Lunch
+![img-center-60](images/xkcd_automation.png)
+Source: https://xkcd.com/1319/
+
+---
+
+class:center,middle
+# Welcome Back
+
+---
+
+class:center,middle
+# Let's Get Back to the Data
 
 ---
 
