@@ -909,6 +909,58 @@ explains each column
 
 ---
 
+# Visualizing the 311 data
+
+--
++ Histograms are a little disappointing for the 311 data
+
+--
+![img-center-50](images/311_hist.png)
+
+--
++ Why?
+
+--
++ What might be a better way to visualize this data?
+
+---
+
+# Making simple maps
+
+--
++ Have we done anything today that might get us close to *mapping* this data?
+
+--
++ Specifically, these columns:
+![img-center-30](images/311_coords.png)
+
+---
+
+# Making simple maps
+
+--
++ Why not use a scatterplot?
+
+--
+```python
+df.plot(kind='scatter', x='Longitude', y='Latitude')
+```
+
+--
+![img-center-50](images/311_map.png)
+
+---
+
+# GeoPandas
+
+--
++ If you wanted to map data other than points, you'll want to try [GeoPandas](https://geopandas.org/)
+
+--
++ We won't get to it today, but we encourage you to try it
+
+---
+
 # Today's Analysis
 
 ![img-center-90](images/derelictvan.png)
