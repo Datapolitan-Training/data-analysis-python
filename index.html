@@ -506,6 +506,129 @@ df.plot(kind='scatter', x='waiting', y='eruptions') # Create a scatter plot
 
 ---
 
+# 5 Data Analytics Tasks
+???
++ Facilitator introduces the 5 main tasks of analysis
++ The goal is to dispell the "black box" sense of analytics as something mystic and unknowable
+--
+
+1. Aggregating
+--
+
+2. Sorting
+--
+
+3. Filtering
+--
+
+4. Manipulating
+--
+
+5. Visualizing
+
+---
+
+# Filtering
+
++ Sometimes you will want to reduce the number of rows you are working with
+--
+
++ You can filter the rows in a dataframe that match a condition
+--
+
++ What do you think this would do?
+```python
+df['eruptions'] > 5
+```
+--
++ Try it!
+
+---
+
+# Filtering
+
+```python
+df['eruptions'] > 5
+```
+--
+
++ Returns a `boolean` (`True`/`False`) value for each row
+--
+
++ If `True`, the row matches. If `False`, it does not.
+--
+
++ You don't usually write a condition like this on its own
+--
+
++ Instead:
+```python
+df[df['eruptions'] > 5]
+```
+
+---
+
+# Filtering
+
++ The template for filtering is:
+```python
+df[condition]
+```
+
+--
+
++ The `condition` usually also uses `df` to compare a column to a value
+--
+
++ So you will often see `df` twice:
+```python
+df[df['eruptions'] > 5]
+```
+--
++ We'll talk more about filtering this afternoon
+
+---
+
+# Sorting
+
++ Helps you order data and see which rows are at the high and low ends of a range
+--
+
++ We can sort by the `eruptions` column like this:
+```python
+df.sort_values('eruptions')
+```
+--
++ Try it out
+
+--
++ What do you notice?
+
+---
+
+# Sorting
+--
+
++ By default `sort_values` sorts the rows from lowest to highest
+--
+
++ This is sometimes referred to as *ascending* order
+--
+
++ You can flip the order and get the data from highest to lowest:
+```python
+df.sort_values('eruptions', ascending=False)
+```
+
+---
+
+class:center, middle
+
+# Wrap-up
+## Tell us one thing you learned this morning
+
+---
+
 name:morning-break
 class:center, middle
 
@@ -1033,7 +1156,7 @@ color=['red', 'green', 'purple', 'orange', 'brown', 'yellow']
 ---
 
 class:center,middle
-# Filtering and Sorting
+# More Filtering
 
 ---
 
