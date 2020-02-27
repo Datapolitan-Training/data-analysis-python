@@ -14,6 +14,11 @@ li {
   font-family: 'Yanone Kaffeesatz';
   font-size:2em;
 }
+
+ul ul li {
+  font-size: .75em;
+}
+
 img {
   width:70%;
   display: block;
