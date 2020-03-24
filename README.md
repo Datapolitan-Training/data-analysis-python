@@ -17,37 +17,48 @@
 + Introduction
   + Class Schedule and Expectations
   + Housekeeping
-  + What is Python?
-  + Value of Data
   + What is Analysis?
-  + What is Python?
-  + Python vs Excel
-+ Today's Question
 + Getting Started
   + Using Jupyter Notebook
   + Python Syntax
-+ Data Collection
+  + Functions and packages
++ Old Faithful
+  + Import, inspect data
+  + Referencing columns
+  + Making a histogram
+  + 5 Data Analytics tasks
+  + Filtering rows
+  + Sorting
++ Wrap-up
++ BREAK: 15 minutes
++ What is Python?
+  + Python vs Excel
+  + NOLA modeling example
++ 311 data
   + Open 311 Dataset in Python
-  + Explore Data Structures and Types
-  + Learn Basic Syntax
-+ Data Exploration
-  + Calculate Summary Statistics
-  + Identify Columns, Levels, and Known Issues
-  + Explore Jupyter Notebook
-+ Data Manipulation
-  + Introduction to Python Packages
-  + Learn to Create New Fields and Calculate New Values
-  + Explore Algorithmic Ways to Tackle Problems in Python  
-+ Form Hypotheses
-  + What Questions Can We Ask of This Data?
-  + How Could We Structure Our Data Analysis?
+  + Summary statistics on 311 data
+  + Data Structures and Types
+  + Making simple maps
++ Today's Analysis
+  + Introduce 311 derelict vehicles question
++ Wrap-up
++ LUNCH: 1 hour
++ Aggregating data
+  + Calculate Summary Statistics with `groupby`
+  + Function chaining
++ More filtering
+  + Selecting multiple columns
+  + Row filters with multiple conditions
+  + Row filters with fuzzy matching on text
++ BREAK: 15 minutes
++ Final exercise
+  + Think about a question that could be answered with 311 data
+  + Work on question in a new notebook
 + Debugging
   + Understand Difference Between Syntax and Semantic Errors
-  + Review Pro-tips for Problem-solving and Debugging
-+ Data Visualization
-  + Create a Table That Answers an Above Question
-  + Create a Plot That Answers an Above Question
+  + Take a look at someone else's code, try to understand it and help debug if possible
++ Show and tell
 + Wrap Up
   + How is Python Different Than Excel?
-  + Examples of Python in Government Work
+  + What have/haven't we covered?
 + Resources
