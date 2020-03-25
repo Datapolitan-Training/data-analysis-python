@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Datapolitan-Training/data-analysis-python/gh-pages?filepath=OldFaithful.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Datapolitan-Training/data-analysis-python/gh-pages)
 
 # Summary
 + A full-day course covering the key concepts of how to leverage the Python programming language for data analysis using open data. The course will cover the basic syntax of Python as it relates to performing basic exploratory data analysis, as well as how to create impactful charts, graphs, and other information visualizations using NYC Open Data for operational decision making.
